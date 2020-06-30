@@ -1,0 +1,69 @@
+.card__mission {
+
+    background-color: rgb(255, 82, 82);
+
+    box-shadow: 2rem 2rem 5rem(rgb(0, 0, 0));
+
+    &--title {
+        font-size: 3rem;
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        text-transform: uppercase;
+    }
+
+    &--tenetTitle {
+        font-size: 2.75rem;
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        background-color: rgb(255, 82, 82);
+    }
+
+    &--tenets {
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        font-weight: 700;
+        font-size: 2rem;
+        background-color: rgb(255, 82, 82);
+    }
+
+    &--summary {
+        font-size: 1.75rem;
+        letter-spacing: .15rem;
+        line-height: 2;
+    }
+}
+
+.card__july1 {
+
+    background-color: rgb(255, 82, 82);
+
+    box-shadow: 2rem 2rem 5rem(rgb(0, 0, 0));
+
+    &--title {
+        font-size: 2.25rem;
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        text-transform: uppercase;
+    }
+
+    &--tenetTitle {
+        font-size: 2rem;
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        background-color: rgb(255, 82, 82);
+    }
+
+    &--tenets {
+        font-family: $font-secondary;
+        letter-spacing: .25rem;
+        font-weight: 700;
+        font-size: 1.5rem;
+        background-color: rgb(255, 82, 82);
+    }
+
+    &--summary {
+        font-size: 1.75rem;
+        letter-spacing: .15rem;
+        line-height: 2;
+    }
+}

@@ -1,0 +1,15 @@
+.heroTron {
+    background-color: black;
+    font-family: $font-secondary;
+    color: red;
+
+    .main-heading {
+        font-size: 10rem;
+        letter-spacing: .25rem;   
+    }
+
+    .sub-heading {
+        letter-spacing: .2rem;
+    }
+}
+

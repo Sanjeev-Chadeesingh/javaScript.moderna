@@ -1,7 +1,7 @@
 {
-  "name": "projectJavascript",
+  "name": "javaScript.moderna",
   "version": "1.0.0",
-  "description": "Attempt to Understand Javascript, alongside a good frontend",
+  "description": "Attempt to Understand JavaScript alongside a decently complicated front end",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
@@ -17,11 +17,9 @@
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "concat": "^1.0.3",
+    "install-peers": "^1.0.3",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.1"
-  },
-  "dependencies": {
-    "bootstrap": "^4.5.0"
   }
 }

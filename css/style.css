@@ -1,0 +1,78 @@
+/*
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Orbitron', sans-serif;
+*/
+* {
+  margin: 0;
+  padding: 0; }
+
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Fira Sans", sans-serif !important;
+  font-size: 1.5rem;
+  background-color: #25283f; }
+
+.heroTron {
+  background-color: black;
+  font-family: "Orbitron", sans-serif;
+  color: red; }
+  .heroTron .main-heading {
+    font-size: 10rem;
+    letter-spacing: .25rem; }
+  .heroTron .sub-heading {
+    letter-spacing: .2rem; }
+
+.card__mission {
+  background-color: #ff5252;
+  box-shadow: 2rem 2rem 5rem black; }
+  .card__mission--title {
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    text-transform: uppercase; }
+  .card__mission--tenetTitle {
+    font-size: 2.75rem;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    background-color: #ff5252; }
+  .card__mission--tenets {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    font-weight: 700;
+    font-size: 2rem;
+    background-color: #ff5252; }
+  .card__mission--summary {
+    font-size: 1.75rem;
+    letter-spacing: .15rem;
+    line-height: 2; }
+
+.card__july1 {
+  background-color: #ff5252;
+  box-shadow: 2rem 2rem 5rem black; }
+  .card__july1--title {
+    font-size: 2.25rem;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    text-transform: uppercase; }
+  .card__july1--tenetTitle {
+    font-size: 2rem;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    background-color: #ff5252; }
+  .card__july1--tenets {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: .25rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: #ff5252; }
+  .card__july1--summary {
+    font-size: 1.75rem;
+    letter-spacing: .15rem;
+    line-height: 2; }
