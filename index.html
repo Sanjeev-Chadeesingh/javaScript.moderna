@@ -54,7 +54,7 @@
                       <li class="list-group-item card__july1--tenets">use String Template Literals</li>
                       <li class="list-group-item card__july1--tenets">work with common operators/methods</li>
                     </ul>
-                    <p class="text-left p-3 card__july1--notes">Primitive Types: &rarr; number, string, boolean, null, undefined</p>
+                    <p class="text-left p-3 card__july1--notes"><strong>Primitive Types: &rarr; number, string, boolean, null, undefined</strong></p>
                     <p class="text-left p-3 card__july1--notes">String &rarr; textual values</p>
                     <p class="text-left p-3 card__july1--notes">Number &rarr; numeric values</p>
                     <p class="text-left p-3 card__july1--notes">Boolean &rarr; simple true/false yes/no values</p>
@@ -70,6 +70,48 @@
                     <p class="text-left p-3 card__july1--notes">14 % 4 &rarr; returns 2</p>
                     <p class="text-left p-3 card__july1--notes"><strong>Order Of Operations Applies To All Math Operations In Javascript</strong></p>
                     <p class="text-left p-3 card__july1--notes">NaN &rarr; special value, stands for Not a Number, is considered a numeric value</p>
+                    <hr>
+                    <p class="text-left p-3 card__july1--notes"><strong>VARIABLES</strong></p>
+                    <p class="text-left p-3 card__july1--notes">Variables are like "labeled jars" for values in javascript</p>
+                    <p class="text-left p-3 card__july1--notes"><strong>let</strong> &rarr; is mutable, can change after declaration</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">someName</span> = <span class="white"> value</span>;</p>
+                    <p class="text-left p-3 card__july1--notes">Numeric Variable Mutation:</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">age</span> = <span class="blue"> age</span> + 3;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">age</span> += 3;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">age</span>++ &rarr; incrementing by one</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">age</span>-- &rarr; decrementing by one</p>
+                    <p class="text-left p-3 card__july1--notes">Variable Naming Standard In Javascript &rarr; <strong>camel case</strong> &rarr; camelCase</p>
+                    <p class="text-left p-3 card__july1--notes"><strong>const</strong> &rarr; is immutable, cannot change after declaration</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">const</span> <span class="blue">someName</span> = <span class="white"> value</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">const</span> works like let, except you cannot change the value</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">const</span> <span class="blue"> test</span> = 7;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">test</span> += 7; &rarr; will not work, <span class="green">const</span> is immutable!!</p>
+                    <p class="text-left p-3 card__july1--notes"><strong>var</strong> &rarr; Works like let. Still generally works, just old, and not ideal. Better to use let+const</p>
+                    <p class="text-left p-3 card__july1--notes">Variables in javascript can change type</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">someName</span> = <span class="white"> someString</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">someName</span> = <span class="white"> someNumber</span>;</p>
+                    <hr>
+                    <p class="text-left p-3 card__july1--notes"><strong>Booleans &rarr; true or false</strong></p>
+                    <hr>
+                    <p class="text-left p-3 card__july1--notes"><strong>Strings &rarr; textual values, strings of characters, wrap them in quotes</strong></p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">firstName</span> = <span class="white"> 'Sanjeev'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">lastName</span> = <span class="white"> 'Chadeesingh'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">fullName</span> = <span class="blue"> firstName </span> + ' ' + <span class="blue">lastName</span>;</p>
+                    <p class="text-left p-3 card__july1--notes">Whether you use single or double quotes, just make sure you are consistent and close them correctly</p>
+                    <p class="text-left p-3 card__july1--notes">Strings are indexed, left to right, starting from zero. Spaces and special characters are included in the index</p>
+                    <p class="text-left p-3 card__july1--notes">Every string has a property called length</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">firstName</span> = <span class="white"> 'Sanjeev'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">firstName.length</span> = <span class="white">7</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">firstName[0]</span> = <span class="white">'S'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><strong>String Methods</strong></p>
+                    <p class="text-left p-3 card__july1--notes">Strings come with a set of built-in methods, which are actions that can be performed on or with that particular string</p>
+                    <p class="text-left p-3 card__july1--notes">We can do things like &rarr; search within a string, replace parts of a string, change case (upper/lower)</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">string.method()</span></p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">firstName</span> = <span class="white"> 'Sanjeev'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">firstName.toUpperCase()</span>;</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">firstName</span> = <span class="white">'SANJEEV'</span>;</p>
+                    <p class="text-left p-3 card__july1--notes">The above line is not a new string. Strings are immutable. You'd have to save the newly changed string to a newly made variable</p>
+                    <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">upperFirstName</span> = <span class="blue">firstName.toUpperCase()</span>;</p>
                     <p class="text-left p-3 card__july1--notes"></p>
                     <p class="text-left p-3 card__july1--notes"></p>
                   </div>
