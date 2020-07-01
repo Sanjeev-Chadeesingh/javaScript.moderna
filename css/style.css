@@ -72,7 +72,7 @@ body {
     font-weight: 700;
     font-size: 1.5rem;
     background-color: #ff5252; }
-  .card__july1--summary {
+  .card__july1--notes {
     font-size: 1.75rem;
     letter-spacing: .15rem;
-    line-height: 2; }
+    line-height: 1.25; }
