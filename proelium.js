@@ -88,3 +88,58 @@ if(password.length >= 6) {
 } else {
     console.log('Your password must be longer');
 }
+let mystery = 5;
+if(mystery) {
+    console.log('truthy');
+} else {
+    console.log('falsy');
+};
+console.log('LOGICAL OPERATORS');
+//can look at password and join first two statements for logical operator work
+let flavor = 'grape';
+if(flavor !== 'grape' && flavor !== 'cherry') {
+    console.log('We do not have that flavor.');
+}
+
+if(!(flavor === 'grape' || flavor === 'chearry')) {
+    console.log('We do not have that flavor.');
+}
+console.log(flavor);
+console.log('---------------');
+console.log('Switch Statements');
+var day;
+switch(day) {
+    case 1:
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    case 3: 
+        console.log('Wednesday');
+        break;
+    case 4: 
+        console.log('Thursday');
+        break;
+    case 5:
+        console.log('Friday');
+        break;
+    case 6:
+        console.log('Saturday');
+        break;
+    case 7:
+        console.log('Sunday');
+        break;
+    default:
+        console.log('???');
+}
+console.log('Ternary Operator');
+var numX = 7;
+if(numX === 7) {
+    console.log('Lucky');
+} else {
+    console.log('Unlucky');
+}
+numX === 7 ? console.log('Lucky') : console.log('Unlucky');
+let status = 'offline';
+let color = status === 'offline' ? 'red' : 'green';
