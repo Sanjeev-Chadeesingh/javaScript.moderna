@@ -123,15 +123,65 @@
                     <p class="text-left p-3 card__july1--notes"><span class="blue">string.slice(<span class="white">'arg'</span>)</span> &rarr; takes slices of an existing string and gives you a piece of it.</p>
                     <p class="text-left p-3 card__july1--notes">Arguments in slice can take a few parameters &rarr; one numeric argument slices the string at the indexed point of the single number, two numbers give the indexed position of where a string should start its slice and end its slice</p>
                     <p class="text-left p-3 card__july1--notes"><span class="green">let</span> <span class="blue">str</span> = <span class="white">'superhero'</span>;</p>
-                    <p class="text-left p-3 card__july1--notes"><span class="blue">str.slice()</span></p>
-                    <p class="text-left p-3 card__july1--notes"></p>
-                    <p class="text-left p-3 card__july1--notes"></p>
-                    <p class="text-left p-3 card__july1--notes"></p>
-                    <p class="text-left p-3 card__july1--notes"></p>
-                    <p class="text-left p-3 card__july1--notes"></p>
+                    <p class="text-left p-3 card__july1--notes"><span class="blue">str.slice(0, 5)</span></p>
+                    <p class="text-left p-3 card__july1--notes">Logs 'super'</p>
                   </div>
             </div>
         </div>
+
+        <div class="row mb-5">
+          <div class="col-12">
+              <div class="card card__july3">
+                  <div class="card-body card__july3-body">
+                    <h5 class="card-title text-center card__july3--title">July 3<sup>rd</sup> 10:07AM</h5>
+                  </div>
+                  <ul class="list-group list-group-flush card__july3--group">
+                    <li class="list-group-item card__july3--tenetTitle">Strings (cont.)</li>
+                  </ul>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">str.replace() &rarr; proelium line 15</span></p>
+                  <p class="text-left p-3 card__july3--notes">Brackets below syntax on MDN &rarr; whatever is within the brackets is optional</p>
+                  <p class="text-left p-3 card__july3--notes"><strong>STRING ESCAPES:</strong></p>
+                  <p class="text-left p-3 card__july3--notes">\n &rarr; newline</p>
+                  <p class="text-left p-3 card__july3--notes">\' &rarr; single quote</p>
+                  <p class="text-left p-3 card__july3--notes">\" &rarr; double quote</p>
+                  <p class="text-left p-3 card__july3--notes">\\ &rarr; backslash</p>
+                  <p class="text-left p-3 card__july3--notes"><strong>STRING TEMPLATE LITERALS</strong></p>
+                  <p class="text-left p-3 card__july3--notes">Template literals are strings that allow embedded expressions, which will be evaluated and then turned into a resulting string</p>
+                  <p class="text-left p-3 card__july3--notes">Use <strong>backtick</strong> characters to contain them</p>
+                  <p class="text-left p-3 card__july3--notes"><strong>Backticks</strong> also work like quotes, replete with the ability to use other quotes</p>
+                  <p class="text-left p-3 card__july3--notes">`${}` &rarr; evaluates first within string</p>
+                  <p class="text-left p-3 card__july3--notes">Whatever you put within the above curly brackets will evaluate into the string it's in</p>
+                  <p class="text-left p-3 card__july3--notes">`You owe me ${100 + 321321 + 9845}`</p>
+                  <p class="text-left p-3 card__july3--notes">Above line evaluates to You owe me (amount)</p>
+                  <p class="text-left p-3 card__july3--notes">Very effective and much better than string concatenation</p>
+                  <p class="text-left p-3 card__july3--notes"><span class="green">let</span> <span class="blue">animal</span> = <span class="white">dog</span>;</p>
+                  <p class="text-left p-3 card__july3--notes"><span class="green">let</span> <span class="blue">sound</span> = <span class="white">bark</span>;</p>
+                  <p class="text-left p-3 card__july3--notes">`<span class="blue">${animal}</span> says <span class="blue">${sound}</span>`</p>
+                  <p class="text-left p-3 card__july3--notes">Above line: <span class="yellow">dog says bark</span></p>
+                  <p class="text-left p-3 card__july3--notes">proelium &rarr; lines 22-25</p>
+                  <hr>
+                  <p class="text-left p-3 card__july3--notes"><strong>NULL AND UNDEFINED</strong></p>
+                  <p class="text-left p-3 card__july3--notes">Both are primitives</p>
+                  <p class="text-left p-3 card__july3--notes"><strong>Null:</strong> Intentional absence of any value. Must be assigned, you assign it yourself. It is the explicit value of nothingness!!!</p>
+                  <p class="text-left p-3 card__july3--notes"><strong>Undefined:</strong> Variables that do not have an assigned value are undefined.</p>
+                  <p class="text-left p-3 card__july3--notes">Undefined represents a variable that as yet has a value assigned to it</p>
+                  <p class="text-left p-3 card__july3--notes">Undefined is typically a value gotten back from javascript in the event of some error, either not defining a variable, or not have a variable defined via whatever code process</p>
+                  <hr>
+                  <p class="text-left p-3 card__july3--notes"><strong>MATH OBJECT</strong></p>
+                  <p class="text-left p-3 card__july3--notes">Contains properties and methods for mathematical constants and functions</p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">MATH.PI <span class="yellow">// 3.141592653589793</span></span></p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">MATH.round(<span class="green">4.9</span>)</span> <span class="yellow">//rounds the number. 5</span></p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">MATH.abs(<span class="green">-456</span>)</span> <span class="yellow">//absolute value. 456</span></p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">MATH.pow(<span class="green">2, 5</span>)</span> <span class="yellow">//Raises 2 to the 5<sup>th</sup> power. 32</span></p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">MATH.floor(<span class="green">3.9999</span>)</span> <span class="yellow">//Removes decimal. 3</span></p>
+                  <p class="text-left p-3 card__july3--notes">Can think of the math object as a collection of mathematical processes</p>
+                  <p class="text-left p-3 card__july3--notes"><span class="blue">Math.method()</span></p>
+                  <p class="text-left p-3 card__july3--notes"></p>
+                  <p class="text-left p-3 card__july3--notes"></p>
+                  <p class="text-left p-3 card__july3--notes"></p>
+                </div>
+          </div>
+      </div>        
 
     </div>
 
