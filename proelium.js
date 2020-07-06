@@ -289,3 +289,111 @@ const student = {
 };
 let testAverage = (student.exams.midterm + student.exams.final) / 2;
 console.log(testAverage);
+let numz = [1, 2, 3];
+let myztery = [1, 2, 3];
+console.log(numz === myztery);
+//above log returns false
+let moreNumz = numz;
+console.log(moreNumz === numz);
+//above log returns true, with double or triple equals
+const uzer = {
+    username: 'Cherrygarcia8',
+    email: 'garcia@gmail.com',
+    notifications: []
+};
+
+// if(uzer.notifications === []) {
+//     console.log('No new notifications!');
+// };
+//above doesn't work.
+if(!uzer.notifications.length) {
+    console.log('No new notifications!');
+}
+//above works
+console.log('------------------------');
+console.log('For Loops');
+for(var i = 0; i < 11; i++) {
+    console.log(`I am number ${i}`);
+}
+for(var i = 1; i <= 20; i++) {
+    console.log(`${i}x${i} = ${i * i}`);
+}
+//countdown from 200 to 0 in increments of 25
+for(var i = 200; i >= 0; i -= 25) {
+    console.log(i);
+}
+const creatures = ['lions', 'tigers', 'bears'];
+for(var i = 0; i < creatures.length; i++) {
+    console.log(`${creatures[i]} oh my!`);
+}
+console.log(creatures.length);
+var myStudents = [
+    {
+        firstName: 'Zeus',
+        grade: 86
+    },
+    {
+        firstName: 'Artemis',
+        grade: 97
+    },
+    {
+        firstName: 'Hera',
+        grade: 72
+    },
+    {
+        firstName: 'Apollo',
+        grade: 90
+    }
+];
+let total = 0;
+var average;
+for(var i = 0; i < myStudents.length; i++) {
+    // console.log(`${myStudents[i].firstName} got a ${myStudents[i].grade} on the test.`);
+    //OR
+    let student = myStudents[i];
+    // console.log(`${student.firstName} got a ${student.grade} on the test`);
+    average = (total += student.grade) / (myStudents.length);
+    console.log(average);
+}
+// const word = 'stressed';
+// let reversedWord = ' ';
+// for(var i = word.length - 1; i >=0; i--) {
+//     // console.log(i);
+//     console.log(word[i]);
+//     reversedWord += word[i];
+//     console.log(reversedWord);
+// }
+console.log('------------------------');
+console.log('Nested Loops');
+// for(var i = 0; i <=10; i++) {
+//     console.log('OUTER LOOP: ', i);
+//     for(var j = 10; j >= 0; j-=2) {
+//         console.log('   INNER LOOP: ', j);
+//     }
+// };
+const gameBoard = [
+    [4, 32, 8, 4],
+    [64, 8, 32, 2],
+    [8, 32, 16, 4],
+    [2, 8, 4, 2]
+];
+let sum = 0;
+for(let i = 0; i < gameBoard.length; i++) {
+    console.log(gameBoard[i]);
+    let row = gameBoard[i];
+    for(let j = 0; j < row.length; j++) {
+        sum += row[j];
+        console.log(sum);
+    }
+}
+console.log('------------------------');
+console.log('While Loops');
+for(let i = 0; i < 10; i++) {
+    console.log(i);
+};
+
+let j = 0;
+while(j < 10) {
+    console.log(j);
+    j++;
+}
