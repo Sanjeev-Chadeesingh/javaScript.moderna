@@ -168,7 +168,7 @@ console.log('Working with Arrays');
 // console.log(dishesToDo);
 // dishesToDo.shift('cereal bowl', 'small platter');
 // console.log(dishesToDo);
-console.log('Concat Method');
+// console.log('Concat Method');
 let arrOne = ['apple', 'banana'];
 let arrTwo = ['asparagus', 'brussel sprouts'];
 let arrThree = ['steak', 'chicken breast']
@@ -182,5 +182,110 @@ console.log('Can search from a certain point by adding said point after said ele
 console.log(arrTwo.includes('brussel sprouts', [0]));
 console.log('indexOf Method');
 console.log(arrTwo.indexOf('asparagus'));
-//can also use parameter like includes for where within the index you want the search to begin
-//includes is good just for checking for presence of something, indexOf will give you the presence and the location
+// can also use parameter like includes for where within the index you want the search to begin
+// includes is good just for checking for presence of something, indexOf will give you the presence and the location
+console.log('Join Method');
+console.log('Reverse Method');
+arrOne.reverse();
+console.log(arrOne);
+console.log(arrTwo.join());
+console.log('Default separator is a comma, but can change it via args within method');
+console.log(arrTwo.join('-'));
+console.log('Slice Method');
+let arrFive = ['shark', 'salmon', 'whale', 'bear', 'dog', 'cat'];
+let swimmers = arrFive.slice(0, 3);
+let runners = arrFive.slice(2, arrFive.length);
+console.log(runners);
+console.log(swimmers);
+console.log(arrFive.slice(-3, -1));
+console.log('Splice Method');
+// adding using splice below
+arrFive.splice(1, 0, 'octopus');
+console.log(arrFive);
+arrFive.splice(3, 2);
+console.log(arrFive);
+let arrSix = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
+arrSix.splice(1, 0, 'octopus');
+console.log(arrSix);
+//deleting whale and bear
+arrSix.splice(3, 2);
+console.log(arrSix);
+arrSix.splice(3, 0, 'whale', 'bear');
+console.log(arrSix);
+arrSix.splice(3, 0, 'snake', 'frog');
+console.log(arrSix);
+arrSix.splice(0, 2, 'SHARK', 'OCTOPUS');
+//replacing first two items
+console.log(arrSix);
+let people = ['Mrs. Robinson', 'Angie', 'Jolene', 'Maggie May', 'Roxanne'];
+people.sort();
+console.log(people);
+let nums = [34, 10, 100000, 67, 99];
+nums.sort();
+console.log(nums);
+let fruit = 'orange';
+let color = fruit;
+fruit = 'watermelon';
+console.log(color);
+let numsOne = [5, 6, 7, 8];
+//above array is not stored in numsOne, a reference to it is.
+let otherNums = nums;
+nums.push(9);
+console.log(nums);
+console.log(otherNums);
+console.log('const with Arrays');
+const city = 'Lisbon';
+// city = 'Orlando';
+//this below doesn't work. const is CONSTANT, below log is an error
+// console.log(city);
+console.log('Nesting Arrays');
+const animalPairs = [
+    ['doe', 'buck'],
+    ['ewe', 'ram'],
+    ['peahen', 'peacock']
+];
+console.log(animalPairs[2][0]);
+console.log('---------------------------------');
+console.log('OBJECTS');
+const fitBitData = {
+    totalSteps: 308727,
+    totalMiles: 211.7,
+    avgCalorieBurn: 5755,
+    workoutsThisWeek: '5 of 7',
+    avgGoodSleep: '2.13',
+    45: 'forty five'
+};
+console.log(fitBitData);
+console.log(fitBitData.totalSteps);
+console.log(fitBitData.workoutsThisWeek);
+console.log(fitBitData[45]);
+let data = { a: 1, b : 2, c: 3 };
+const numbers = {
+    100: 'one hundred',
+    16: 'sixteen',
+    '76 trombones': 'great song!'
+};
+console.log(numbers[100]);
+console.log(numbers['76 trombones']);
+const userReviews = {};
+userReviews['queenBee49'] = 4.0;
+console.log(userReviews);
+userReviews.mrSmith78 = 3.5;
+console.log(userReviews);
+userReviews.colt = '5';
+console.log(userReviews);
+userReviews.colt = 5;
+console.log(userReviews);
+userReviews.mrSmith78 += 1.5;
+console.log(userReviews);
+const student = {
+    firstName: 'Sanjeev',
+    lastName: 'Chadeesingh',
+    strengths: ['Reading', 'Writing'],
+    exams: {
+        midterm: 92,
+        final: 88
+    }
+};
+let testAverage = (student.exams.midterm + student.exams.final) / 2;
+console.log(testAverage);
