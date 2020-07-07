@@ -169,192 +169,192 @@ console.log('Working with Arrays');
 // dishesToDo.shift('cereal bowl', 'small platter');
 // console.log(dishesToDo);
 // console.log('Concat Method');
-let arrOne = ['apple', 'banana'];
-let arrTwo = ['asparagus', 'brussel sprouts'];
-let arrThree = ['steak', 'chicken breast']
-console.log(arrOne.concat(arrTwo));
+// let arrOne = ['apple', 'banana'];
+// let arrTwo = ['asparagus', 'brussel sprouts'];
+// let arrThree = ['steak', 'chicken breast']
+// console.log(arrOne.concat(arrTwo));
 // puts arrOne first, order matters!!
-let arrAll = arrOne.concat(arrTwo, arrThree);
-console.log(arrAll);
-console.log('Includes Method');
-console.log(arrTwo.includes('asparagus'));
-console.log('Can search from a certain point by adding said point after said element');
-console.log(arrTwo.includes('brussel sprouts', [0]));
-console.log('indexOf Method');
-console.log(arrTwo.indexOf('asparagus'));
+// let arrAll = arrOne.concat(arrTwo, arrThree);
+// console.log(arrAll);
+// console.log('Includes Method');
+// console.log(arrTwo.includes('asparagus'));
+// console.log('Can search from a certain point by adding said point after said element');
+// console.log(arrTwo.includes('brussel sprouts', [0]));
+// console.log('indexOf Method');
+// console.log(arrTwo.indexOf('asparagus'));
 // can also use parameter like includes for where within the index you want the search to begin
 // includes is good just for checking for presence of something, indexOf will give you the presence and the location
-console.log('Join Method');
-console.log('Reverse Method');
-arrOne.reverse();
-console.log(arrOne);
-console.log(arrTwo.join());
-console.log('Default separator is a comma, but can change it via args within method');
-console.log(arrTwo.join('-'));
-console.log('Slice Method');
-let arrFive = ['shark', 'salmon', 'whale', 'bear', 'dog', 'cat'];
-let swimmers = arrFive.slice(0, 3);
-let runners = arrFive.slice(2, arrFive.length);
-console.log(runners);
-console.log(swimmers);
-console.log(arrFive.slice(-3, -1));
-console.log('Splice Method');
+// console.log('Join Method');
+// console.log('Reverse Method');
+// arrOne.reverse();
+// console.log(arrOne);
+// console.log(arrTwo.join());
+// console.log('Default separator is a comma, but can change it via args within method');
+// console.log(arrTwo.join('-'));
+// console.log('Slice Method');
+// let arrFive = ['shark', 'salmon', 'whale', 'bear', 'dog', 'cat'];
+// let swimmers = arrFive.slice(0, 3);
+// let runners = arrFive.slice(2, arrFive.length);
+// console.log(runners);
+// console.log(swimmers);
+// console.log(arrFive.slice(-3, -1));
+// console.log('Splice Method');
 // adding using splice below
-arrFive.splice(1, 0, 'octopus');
-console.log(arrFive);
-arrFive.splice(3, 2);
-console.log(arrFive);
-let arrSix = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
-arrSix.splice(1, 0, 'octopus');
-console.log(arrSix);
+// arrFive.splice(1, 0, 'octopus');
+// console.log(arrFive);
+// arrFive.splice(3, 2);
+// console.log(arrFive);
+// let arrSix = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
+// arrSix.splice(1, 0, 'octopus');
+// console.log(arrSix);
 //deleting whale and bear
-arrSix.splice(3, 2);
-console.log(arrSix);
-arrSix.splice(3, 0, 'whale', 'bear');
-console.log(arrSix);
-arrSix.splice(3, 0, 'snake', 'frog');
-console.log(arrSix);
-arrSix.splice(0, 2, 'SHARK', 'OCTOPUS');
+// arrSix.splice(3, 2);
+// console.log(arrSix);
+// arrSix.splice(3, 0, 'whale', 'bear');
+// console.log(arrSix);
+// arrSix.splice(3, 0, 'snake', 'frog');
+// console.log(arrSix);
+// arrSix.splice(0, 2, 'SHARK', 'OCTOPUS');
 //replacing first two items
-console.log(arrSix);
-let people = ['Mrs. Robinson', 'Angie', 'Jolene', 'Maggie May', 'Roxanne'];
-people.sort();
-console.log(people);
-let nums = [34, 10, 100000, 67, 99];
-nums.sort();
-console.log(nums);
-let fruit = 'orange';
-let color = fruit;
-fruit = 'watermelon';
-console.log(color);
-let numsOne = [5, 6, 7, 8];
+// console.log(arrSix);
+// let people = ['Mrs. Robinson', 'Angie', 'Jolene', 'Maggie May', 'Roxanne'];
+// people.sort();
+// console.log(people);
+// let nums = [34, 10, 100000, 67, 99];
+// nums.sort();
+// console.log(nums);
+// let fruit = 'orange';
+// let color = fruit;
+// fruit = 'watermelon';
+// console.log(color);
+// let numsOne = [5, 6, 7, 8];
 //above array is not stored in numsOne, a reference to it is.
-let otherNums = nums;
-nums.push(9);
-console.log(nums);
-console.log(otherNums);
-console.log('const with Arrays');
-const city = 'Lisbon';
+// let otherNums = nums;
+// nums.push(9);
+// console.log(nums);
+// console.log(otherNums);
+// console.log('const with Arrays');
+// const city = 'Lisbon';
 // city = 'Orlando';
 //this below doesn't work. const is CONSTANT, below log is an error
 // console.log(city);
-console.log('Nesting Arrays');
-const animalPairs = [
-    ['doe', 'buck'],
-    ['ewe', 'ram'],
-    ['peahen', 'peacock']
-];
-console.log(animalPairs[2][0]);
-console.log('---------------------------------');
-console.log('OBJECTS');
-const fitBitData = {
-    totalSteps: 308727,
-    totalMiles: 211.7,
-    avgCalorieBurn: 5755,
-    workoutsThisWeek: '5 of 7',
-    avgGoodSleep: '2.13',
-    45: 'forty five'
-};
-console.log(fitBitData);
-console.log(fitBitData.totalSteps);
-console.log(fitBitData.workoutsThisWeek);
-console.log(fitBitData[45]);
-let data = { a: 1, b : 2, c: 3 };
-const numbers = {
-    100: 'one hundred',
-    16: 'sixteen',
-    '76 trombones': 'great song!'
-};
-console.log(numbers[100]);
-console.log(numbers['76 trombones']);
-const userReviews = {};
-userReviews['queenBee49'] = 4.0;
-console.log(userReviews);
-userReviews.mrSmith78 = 3.5;
-console.log(userReviews);
-userReviews.colt = '5';
-console.log(userReviews);
-userReviews.colt = 5;
-console.log(userReviews);
-userReviews.mrSmith78 += 1.5;
-console.log(userReviews);
-const student = {
-    firstName: 'Sanjeev',
-    lastName: 'Chadeesingh',
-    strengths: ['Reading', 'Writing'],
-    exams: {
-        midterm: 92,
-        final: 88
-    }
-};
-let testAverage = (student.exams.midterm + student.exams.final) / 2;
-console.log(testAverage);
-let numz = [1, 2, 3];
-let myztery = [1, 2, 3];
-console.log(numz === myztery);
+// console.log('Nesting Arrays');
+// const animalPairs = [
+//     ['doe', 'buck'],
+//     ['ewe', 'ram'],
+//     ['peahen', 'peacock']
+// ];
+// console.log(animalPairs[2][0]);
+// console.log('---------------------------------');
+// console.log('OBJECTS');
+// const fitBitData = {
+//     totalSteps: 308727,
+//     totalMiles: 211.7,
+//     avgCalorieBurn: 5755,
+//     workoutsThisWeek: '5 of 7',
+//     avgGoodSleep: '2.13',
+//     45: 'forty five'
+// };
+// console.log(fitBitData);
+// console.log(fitBitData.totalSteps);
+// console.log(fitBitData.workoutsThisWeek);
+// console.log(fitBitData[45]);
+// let data = { a: 1, b : 2, c: 3 };
+// const numbers = {
+//     100: 'one hundred',
+//     16: 'sixteen',
+//     '76 trombones': 'great song!'
+// };
+// console.log(numbers[100]);
+// console.log(numbers['76 trombones']);
+// const userReviews = {};
+// userReviews['queenBee49'] = 4.0;
+// console.log(userReviews);
+// userReviews.mrSmith78 = 3.5;
+// console.log(userReviews);
+// userReviews.colt = '5';
+// console.log(userReviews);
+// userReviews.colt = 5;
+// console.log(userReviews);
+// userReviews.mrSmith78 += 1.5;
+// console.log(userReviews);
+// const student = {
+//     firstName: 'Sanjeev',
+//     lastName: 'Chadeesingh',
+//     strengths: ['Reading', 'Writing'],
+//     exams: {
+//         midterm: 92,
+//         final: 88
+//     }
+// };
+// let testAverage = (student.exams.midterm + student.exams.final) / 2;
+// console.log(testAverage);
+// let numz = [1, 2, 3];
+// let myztery = [1, 2, 3];
+// console.log(numz === myztery);
 //above log returns false
-let moreNumz = numz;
-console.log(moreNumz === numz);
+// let moreNumz = numz;
+// console.log(moreNumz === numz);
 //above log returns true, with double or triple equals
-const uzer = {
-    username: 'Cherrygarcia8',
-    email: 'garcia@gmail.com',
-    notifications: []
-};
+// const uzer = {
+//     username: 'Cherrygarcia8',
+//     email: 'garcia@gmail.com',
+//     notifications: []
+// };
 
 // if(uzer.notifications === []) {
 //     console.log('No new notifications!');
 // };
 //above doesn't work.
-if(!uzer.notifications.length) {
-    console.log('No new notifications!');
-}
+// if(!uzer.notifications.length) {
+//     console.log('No new notifications!');
+// }
 //above works
-console.log('------------------------');
-console.log('For Loops');
-for(var i = 0; i < 11; i++) {
-    console.log(`I am number ${i}`);
-}
-for(var i = 1; i <= 20; i++) {
-    console.log(`${i}x${i} = ${i * i}`);
-}
+// console.log('------------------------');
+// console.log('For Loops');
+// for(var i = 0; i < 11; i++) {
+//     console.log(`I am number ${i}`);
+// }
+// for(var i = 1; i <= 20; i++) {
+//     console.log(`${i}x${i} = ${i * i}`);
+// }
 //countdown from 200 to 0 in increments of 25
-for(var i = 200; i >= 0; i -= 25) {
-    console.log(i);
-}
-const creatures = ['lions', 'tigers', 'bears'];
-for(var i = 0; i < creatures.length; i++) {
-    console.log(`${creatures[i]} oh my!`);
-}
-console.log(creatures.length);
-var myStudents = [
-    {
-        firstName: 'Zeus',
-        grade: 86
-    },
-    {
-        firstName: 'Artemis',
-        grade: 97
-    },
-    {
-        firstName: 'Hera',
-        grade: 72
-    },
-    {
-        firstName: 'Apollo',
-        grade: 90
-    }
-];
-let total = 0;
-var average;
-for(var i = 0; i < myStudents.length; i++) {
+// for(var i = 200; i >= 0; i -= 25) {
+//     console.log(i);
+// }
+// const creatures = ['lions', 'tigers', 'bears'];
+// for(var i = 0; i < creatures.length; i++) {
+//     console.log(`${creatures[i]} oh my!`);
+// }
+// console.log(creatures.length);
+// var myStudents = [
+//     {
+//         firstName: 'Zeus',
+//         grade: 86
+//     },
+//     {
+//         firstName: 'Artemis',
+//         grade: 97
+//     },
+//     {
+//         firstName: 'Hera',
+//         grade: 72
+//     },
+//     {
+//         firstName: 'Apollo',
+//         grade: 90
+//     }
+// ];
+// let total = 0;
+// var average;
+// for(var i = 0; i < myStudents.length; i++) {
     // console.log(`${myStudents[i].firstName} got a ${myStudents[i].grade} on the test.`);
     //OR
-    let student = myStudents[i];
+    // let student = myStudents[i];
     // console.log(`${student.firstName} got a ${student.grade} on the test`);
-    average = (total += student.grade) / (myStudents.length);
-    console.log(average);
-}
+    // average = (total += student.grade) / (myStudents.length);
+    // console.log(average);
+// }
 // const word = 'stressed';
 // let reversedWord = ' ';
 // for(var i = word.length - 1; i >=0; i--) {
@@ -371,29 +371,144 @@ console.log('Nested Loops');
 //         console.log('   INNER LOOP: ', j);
 //     }
 // };
-const gameBoard = [
-    [4, 32, 8, 4],
-    [64, 8, 32, 2],
-    [8, 32, 16, 4],
-    [2, 8, 4, 2]
-];
-let sum = 0;
-for(let i = 0; i < gameBoard.length; i++) {
-    console.log(gameBoard[i]);
-    let row = gameBoard[i];
-    for(let j = 0; j < row.length; j++) {
-        sum += row[j];
-        console.log(sum);
-    }
-}
-console.log('------------------------');
-console.log('While Loops');
-for(let i = 0; i < 10; i++) {
-    console.log(i);
-};
+// const gameBoard = [
+//     [4, 32, 8, 4],
+//     [64, 8, 32, 2],
+//     [8, 32, 16, 4],
+//     [2, 8, 4, 2]
+// ];
+// let sum = 0;
+// for(let i = 0; i < gameBoard.length; i++) {
+//     console.log(gameBoard[i]);
+//     let row = gameBoard[i];
+//     for(let j = 0; j < row.length; j++) {
+//         sum += row[j];
+//         console.log(sum);
+//     }
+// }
+// console.log('------------------------');
+// console.log('While Loops');
+// for(let i = 0; i < 10; i++) {
+//     console.log(i);
+// };
 
-let j = 0;
-while(j < 10) {
-    console.log(j);
-    j++;
+// let j = 0;
+// while(j < 10) {
+//     console.log(j);
+//     j++;
+// }
+// while(guess !== target) {
+//     console.log(guess);
+//     guess = Math.floor(Math.random() * 10);
+// }
+// const target = Math.floor(Math.random() * 10);
+// let guess = Math.floor(Math.random() * 10);
+// while(true) {
+//     if(target === guess) break;
+//     console.log(`Target: ${target} Guess: ${guess}`);
+//     guess = Math.floor(Math.random() * 10);
+// }
+// console.log(`Target: ${target} Guess: ${guess}`);
+// console.log(`Congrats you win!!`);
+console.log('--------------------------');
+console.log('For...Of Loop');
+let subreddits = ['soccer', 'popheads', 'cringe', 'books'];
+// for(let i = 0; i < subreddits.length; i++) {
+//     console.log(subreddits[i]);
+// }
+
+// for(let element of subreddits) {
+//     console.log(element);
+// }
+
+// for(let char of 'cockadoodledoo') {
+//     console.log(char.toUpperCase());
+// };
+const magicSquare = [
+    [2, 7, 6],
+    [9, 5, 1],
+    [4, 3, 8]
+];
+// for(let i = 0; i < magicSquare.length; i++) {
+//     let row = magicSquare[i];
+//     let sum = 0;
+//     for(let j = 0; j < row.length; j++) {
+//         console.log(row[j]);
+//     }
+// }
+//shifters are kept in a suspended state of transformation from human to animal, and when they die, the transformation is complete, explain the famous maneaters in such fashion
+// for(let i = 0; i < magicSquare.length; i++) {
+//     var total = 0;
+//     var sum = 0;
+//     var row = magicSquare[i];
+//     for(let j = 0; j < row.length; j++) {
+        
+//         sum += row[j]; 
+       
+        
+//     }
+//     console.log(total = sum * magicSquare.length); break;
+    
+    
+// };
+// for(let row of magicSquare) {
+//     let sum = 0;
+//     for(let num of row) {
+//         sum += num;
+//     }
+//     console.log(sum);
+// }
+const words1 = ['mail', 'milk', 'bath', 'black'];
+const words2 = ['box', 'shake', 'tub', 'berry'];
+const words3 = ['', '', '', ''];
+for(let i = 0; i < words1.length; i++) {
+    let firstHalf, secondHalf;
+    firstHalf = words1[i];
+    for(let j = 0; j < words2.length; j++) {
+        secondHalf = words2[i];
+    }
+    console.log(`${firstHalf + secondHalf}`)
+}
+console.log('----------------------');
+console.log('Looping/Iterating over objects');
+const movieReviews = {
+    Arrival: 9.5,
+    Alien: 9,
+    Amelie: 8,
+    'In Bruges' : 9,
+    Amadeus : 10,
+    'Kill Bill' : 8,
+    'Little Miss Sunshine' : 8.5,
+    Coraline: 7.5
+};
+// console.log(Object.keys(movieReviews));
+// console.log(Object.values(movieReviews));
+// for(let title of Object.keys(movieReviews)) {
+//     // console.log(title);
+//     console.log(title, movieReviews[title]);
+// }
+// const ratings = Object.values(movieReviews);
+// let total = 0;
+// for(let average of ratings) {
+//     total += average;
+// }
+// console.log(total / ratings.length);
+console.log('---------------------------');
+console.log('for...in loops');
+const jeapordyWinnings = {
+    regularPlay: 2522700,
+    watsonChallenge: 300000,
+    tournamentOfChampions: 500000,
+    battleOfTheDecades: 100000
+};
+let total = 0;
+for(let key in jeapordyWinnings) {
+    total += jeapordyWinnings[key];
+    console.log(`Sitch: ${key}, total money won: ${jeapordyWinnings[key]}`);
+    //you gotta come out of the loop to get a finished statement from it!
+}
+console.log(`Total Earnings: ${total}.`);
+for(let key in [88 , 99, 77, 66]) {
+    console.log(key);
+    //outputs the indices
 }
