@@ -424,11 +424,11 @@ let subreddits = ['soccer', 'popheads', 'cringe', 'books'];
 // for(let char of 'cockadoodledoo') {
 //     console.log(char.toUpperCase());
 // };
-const magicSquare = [
-    [2, 7, 6],
-    [9, 5, 1],
-    [4, 3, 8]
-];
+// const magicSquare = [
+//     [2, 7, 6],
+//     [9, 5, 1],
+//     [4, 3, 8]
+// ];
 // for(let i = 0; i < magicSquare.length; i++) {
 //     let row = magicSquare[i];
 //     let sum = 0;
@@ -495,20 +495,207 @@ const movieReviews = {
 // console.log(total / ratings.length);
 console.log('---------------------------');
 console.log('for...in loops');
-const jeapordyWinnings = {
-    regularPlay: 2522700,
-    watsonChallenge: 300000,
-    tournamentOfChampions: 500000,
-    battleOfTheDecades: 100000
+// const jeapordyWinnings = {
+//     regularPlay: 2522700,
+//     watsonChallenge: 300000,
+//     tournamentOfChampions: 500000,
+//     battleOfTheDecades: 100000
+// };
+// let total = 0;
+// for(let key in jeapordyWinnings) {
+//     total += jeapordyWinnings[key];
+//     console.log(`Sitch: ${key}, total money won: ${jeapordyWinnings[key]}`);
+//     //you gotta come out of the loop to get a finished statement from it!
+// }
+// console.log(`Total Earnings: ${total}.`);
+// for(let key in [88 , 99, 77, 66]) {
+//     console.log(key);
+//     //outputs the indices
+// }
+// const magicSquare = [
+//     [2, 7, 6],
+//     [9, 5, 1],
+//     [4, 3, 8]
+// ];
+
+// for(let i = 0; i < magicSquare.length; i++) {
+//     let row = magicSquare[i];
+//     let sum = 0;
+//     for(j = 0; j < row.length; j++) {
+//         sum += row[j];
+//     }
+//     var total = sum * magicSquare.length; 
+//     console.log(total); break;
+// }
+// start at 300 and count back in 10's to 0
+// let count = 300;
+// while(count >= 0) {
+//     count -= 10;
+//     console.log(count);
+// }
+console.log('-----------------------------');
+console.log('Functions');
+//6/8/2020 10:10AM
+//GOALS:
+//write valid functions
+//write functions with arguments
+//compare function expressions & function statements
+//write a buncha functions
+//Reusable Procedures
+    //allow us to write reusable, modular code
+    //we define a chunnk of code that we can execute at a later point
+    //we use them all the time
+//2 step process: 1-Define (how this should work/ registering it/ 'filling out forms') 2-Execute (run it)
+//Methods are built in functions
+// console.log('hello'.toUpperCase());
+//use parenthesis to call them
+//Function Declaration/Statement
+//function someName(args(if args)) { some code that runs when function is called };
+function hiyah() {
+    console.log('hello'.toUpperCase());
+    console.log('Booyah!');
+    console.log('Yeeha!');
 };
-let total = 0;
-for(let key in jeapordyWinnings) {
-    total += jeapordyWinnings[key];
-    console.log(`Sitch: ${key}, total money won: ${jeapordyWinnings[key]}`);
-    //you gotta come out of the loop to get a finished statement from it!
+
+hiyah();
+function rollDie() {
+    let roll = Math.floor(Math.random() * 6) + 1;
+    console.log(`You rolled a ${roll}`);
 }
-console.log(`Total Earnings: ${total}.`);
-for(let key in [88 , 99, 77, 66]) {
-    console.log(key);
-    //outputs the indices
+
+//can call functions in functions
+// rollDie();
+function throwDice(numRolls) {
+    for(let i = 0; i < numRolls; i++) {
+        rollDie();
+    }
+    //could've looped instead of manual entry
 }
+
+throwDice(3);
+
+//Function Arguments
+    //args are inputs to a function
+function greet(person) {
+    console.log(`Hello, ${person}!`);
+}
+greet('Sanjeev');
+//functions with multiple arguments
+function square(num) {
+    console.log(num*num);
+};
+square(4);
+//4 is the argument when you call it, num is the parameter (placeholder) when you run it
+function sum(x, y) {
+    // console.log(x + y);
+    return x + y;
+};
+
+//RETURN! 
+    //built-in methods return values when we call them, we can store these values
+let scream = 'hello'.toUpperCase();
+    //when arrow in chrome dev console points left, it is a return value
+    //returns are good and useful because you can pass them through to other things/functions and store them in variables
+    //if no value is returned there is no output
+        //But you can capture return values in variables!
+//June 9th 10:20
+//Return values redux
+//can only return once in a function, for one value!
+    //if need to return x and y from sum, can return them in an array or an object, just has to be one thing
+let uppity = 'hello'.toUpperCase();
+console.log(uppity);
+let zed = sum(5, 5);
+console.log(`ZED: ${zed}`);
+function divide(a, b) {
+    console.log(a / b);
+};
+divide(9, 3);
+//Return Execution
+    //the return statement ends function execution AND specifies the value to be returned by that function
+function isPurple(color) {
+    if(color.toLowerCase() === 'purple') {
+        return true;
+    }
+        //removed the else for DRY-ness
+        return false;
+};
+//above is good example of if/else letting you have multiple possible returns. As soon as one of the returns above runs, the function's execution is stopped
+function containsPurple(arr) {
+    for(let color of arr) {
+        if(color === 'purple' || color === 'magenta') {
+            return true;
+        }
+    }
+    return false;
+    //return is put here, outside of the loop, because the moment it comes across something not in the array, it'll break the loop and not allow itself to see the other items in the array to accurately determine whether someting is in the array or not
+}
+console.log('-------------------------');
+console.log('FUNCTION PRACTICE');
+console.log('passwordValidator');
+function isValidPassword(password, username) {
+   if(password.length < 8) {
+       return false;
+   }
+   if(password.indexOf(' ') !== -1) {
+       return false;
+   }
+   if(password.indexOf(username) !== -1) {
+       return false;
+   }
+   return true;
+};
+var test = isValidPassword('happyMan1234', 'happyMan');
+console.log(test);
+//can refactor this with a chain of or's + false
+console.log('average');
+// function average(arr) {
+//     let sum = 0;
+//     for(let i = 0; i < arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum / arr.length;
+// };
+let arrrOne = [1, 2, 3, 4, 5];
+// var testOne = average(arrrOne);
+// console.log(testOne);
+function average(arr) {
+    let sum = 0;
+    for(let iterator of arr) {
+        sum += iterator;
+    }
+    return sum / arr.length;
+};
+console.log(average(arrrOne));
+console.log('------------------');
+console.log('pangram');
+// let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+let zedOne = 'The quick brown fox jumps over the lazy dog.';
+let zedTwo = 'The end is near.';
+function isPangram(str) {
+    let newStr = str.toLowerCase();
+    for(let char of 'abcdefghijklmnopqrstuvwxyz') {
+        if(newStr.indexOf(char) === -1) {
+            return false;
+        }
+    }
+    return true;
+};
+isPangram(zedOne);
+isPangram(zedTwo);
+console.log('------------------');
+console.log('getCard exercise');
+const cards = {
+    values: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'],
+    suits: ['clubs', 'spades', 'hearts', 'diamonds']
+}
+function getCard() {
+    let values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'];
+    let suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+    let valueIDS = Math.floor(Math.random() * values.length);
+    let suitsIDS = Math.floor(Math.random() * suits.length);
+    let value = values[valueIDS];
+    let suit = suits[suitsIDS];
+    // console.log(`${value} of ${suit}`);
+    return {value: value, suit: suit};
+}
+console.log(getCard(cards));
