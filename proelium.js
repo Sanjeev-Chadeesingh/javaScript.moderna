@@ -658,44 +658,44 @@ console.log('average');
 let arrrOne = [1, 2, 3, 4, 5];
 // var testOne = average(arrrOne);
 // console.log(testOne);
-function average(arr) {
-    let sum = 0;
-    for(let iterator of arr) {
-        sum += iterator;
-    }
-    return sum / arr.length;
-};
-console.log(average(arrrOne));
-console.log('------------------');
-console.log('pangram');
-// let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-let zedOne = 'The quick brown fox jumps over the lazy dog.';
-let zedTwo = 'The end is near.';
-function isPangram(str) {
-    let newStr = str.toLowerCase();
-    for(let char of 'abcdefghijklmnopqrstuvwxyz') {
-        if(newStr.indexOf(char) === -1) {
-            return false;
-        }
-    }
-    return true;
-};
-isPangram(zedOne);
-isPangram(zedTwo);
-console.log('------------------');
-console.log('getCard exercise');
-const cards = {
-    values: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'],
-    suits: ['clubs', 'spades', 'hearts', 'diamonds']
-}
-function getCard() {
-    let values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'];
-    let suits = ['clubs', 'spades', 'hearts', 'diamonds'];
-    let valueIDS = Math.floor(Math.random() * values.length);
-    let suitsIDS = Math.floor(Math.random() * suits.length);
-    let value = values[valueIDS];
-    let suit = suits[suitsIDS];
-    // console.log(`${value} of ${suit}`);
-    return {value: value, suit: suit};
-}
-console.log(getCard(cards));
+// function average(arr) {
+//     let sum = 0;
+//     for(let iterator of arr) {
+//         sum += iterator;
+//     }
+//     return sum / arr.length;
+// };
+// console.log(average(arrrOne));
+// console.log('------------------');
+// console.log('pangram');
+// // let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// let zedOne = 'The quick brown fox jumps over the lazy dog.';
+// let zedTwo = 'The end is near.';
+// function isPangram(str) {
+//     let newStr = str.toLowerCase();
+//     for(let char of 'abcdefghijklmnopqrstuvwxyz') {
+//         if(newStr.indexOf(char) === -1) {
+//             return false;
+//         }
+//     }
+//     return true;
+// };
+// isPangram(zedOne);
+// isPangram(zedTwo);
+// console.log('------------------');
+// console.log('getCard exercise');
+// const cards = {
+//     values: ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'],
+//     suits: ['clubs', 'spades', 'hearts', 'diamonds']
+// }
+// function getCard() {
+//     let values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'K', 'Q', 'A'];
+//     let suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+//     let valueIDS = Math.floor(Math.random() * values.length);
+//     let suitsIDS = Math.floor(Math.random() * suits.length);
+//     let value = values[valueIDS];
+//     let suit = suits[suitsIDS];
+//     // console.log(`${value} of ${suit}`);
+//     return {value: value, suit: suit};
+// }
+// console.log(getCard(cards));
