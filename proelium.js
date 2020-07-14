@@ -899,3 +899,356 @@ console.log('Functions in detal!!');
         //let and const declarations are not hoisted
         //function declarations are hoisted!
         //function expressions aren't hoisted, exactly. Javascript knows there's a variable, just doesn't know the value. Spits back undefined!
+        /* 
+        function howl() {
+            console.log('Awhooooooooo');
+        };
+
+        howl();
+
+        var hoot = function() {
+            console.log('HOOOOOOO HOOOOOOOO');
+        }
+        hoot();
+        */
+//7-14-20
+    //ARRAY CALLBACK METHODS
+        //outer function calls your argument function(daCallbak)
+        //methods that expect you to pass a function in
+        //arrays come with many built-in methods that accept callback functions
+        //run a function once per every element in an array is main goal
+        //GOALS
+            //Use the new arrow function syntax
+            //understand the following
+                //forEach
+                    //accepts a callback, calls the function once FOR EACH element in the array
+                    //array.forEach(function(el){
+                        //do something
+                    //})
+                    /* 
+                    const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+
+books.forEach(function(book){
+    console.log(book.title.toLowerCase());
+});
+
+for(let book of books) {
+    console.log(book.title);
+};
+
+for(let i = 0; i < books.length; i++){
+    console.log(books[i].title.toUpperCase());
+};
+
+books.forEach(function(book, idx){
+    console.log(idx, book.title);
+})
+                    */
+                //map
+                    //creates a new array with the results of calling a callback on every element in the array
+                    //good for extracting portions of an array or generating a new one with new rules
+                    //MUST RETURN A VALUE
+                    //array.map(function(cb){
+                        //doSomething;
+                    //})
+                    /* 
+                    const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+const words = ['asap', 'byob', 'rsvp', 'diy'];
+const doubles = numbers.map(function(num){
+    return num * 2;
+});
+console.log(doubles);
+const evenOrOdd = numbers.map(function(num){
+    return {
+        value: num,
+        isEven: num % 2 === 0
+    }
+});
+console.log(evenOrOdd);
+const newWords = words.map(function(word){
+    return word.toUpperCase().split('').join('.');
+});
+console.log(newWords);
+
+const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+const bookTitles = books.map(function(book){
+    return `Title: ${book.title}`;
+});
+console.log(bookTitles);
+                    */
+////////////////////////////////////////////////////////////////////////////
+
+//ARROW FUNCTIONS
+    //syntactically compact alternative to regular function expression!!!
+    //if you ONLY have one parameter, you can leave the parenthesis off
+    //no parameters means use empty parenthesis
+
+    /* 
+    const square = function(num) {
+    return x * x;
+}
+
+const square = (num) => {
+    return x * x;
+}
+
+const isEven = (num) => {
+    return num % 2 === 0;
+}
+
+const multiply = (x, y) => {
+    return x * y;
+}
+
+const isOdd = num => {
+    return num % 3 === 0;
+}
+
+const greet = () => {
+    console.log('Hiyah!');
+}
+greet();
+    */
+
+    //IMPLICIT RETURNS IN ARROW FUNCTIONS
+        // const square = n => (
+            //     n * n
+        //     )
+    //const square = n => n * n;
+    //console.log(square(4));
+
+    /*
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+
+const doubles1 = nums.map(n => n * 2);
+//above works because we are working with only one expression
+console.log(doubles1);
+
+const numTypes = nums.map((n) => (
+    n % 2 === 0 ? 'even' : 'odd'
+));
+console.log(numTypes);
+    */
+
+////////////////////////////////////////////////////////////////////////////
+                //filter
+                    //Creates a new array with all elements that pass the function test implemented by the provided function
+                    //creates a copy with specific, targeted information
+                    /*
+                    const nums = [34, 35, 67, 54, 109, 102, 32, 9];
+const odds = nums.filter(n => n % 2 === 1);
+console.log(odds);
+const bigNums = nums.filter(n => n > 50);
+console.log(bigNums);
+const lilNums = nums.filter(n => (n < 50))
+console.log(lilNums);
+const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+const goodBooks = books.filter(book => book.rating > 4.5);
+const query = books.filter(book => book.title.includes('IT'));
+console.log(query);
+                    */
+                //find
+                    //returns the value of the FIRST ELEMENT in the array that satisfies the provided testing function
+                    //array.find(element => {
+                        //doSomething
+                    //})
+                    /* 
+                    let movies = [
+    'The Fantastic Mr. Fox',
+    'Mr. and Mrs. Smith',
+    'Mrs. Doubtfire',
+    'Mr. Deeds'
+];
+const film = movies.find(movie => {
+   return movie.includes('Mrs.');
+})
+console.log(film);
+
+const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+const cherryBook = books.filter(cherry => {
+    return cherry.title === 'Cherry';
+})
+console.log(cherryBook);
+
+                    */
+                //reduce
+                    //Executes a reducer function on each element of the array, RESULTING IN A SINGLE VALUE
+                    //takes an array of values and reduces them down to a single value
+                    //array.reduce((total, currentValue) => {return total + currentValue});
+                    /*
+                    const nums = [3, 4, 5, 6, 7];
+const tPlied = nums.reduce((total, current) =>{
+    return total * current;
+}, can put a starting value here);
+console.log(tPlied);
+-------------------------------------------------------------------------
+const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64, 107];
+// let highGrade = grades.reduce((high, current) => {
+//     if(current > high) return current;
+//     return high; 
+// })
+let highGrade = grades.reduce((high, current) => current > high ? current : high);
+console.log(highGrade);
+
+                    */
+                //some
+                    //similar to every, but returns true if JUST ONE of the array elements pass the test function
+                    /* 
+const words = ['dog', 'dig', 'log', 'bag', 'wag'];
+const startsD = words.some(word => console.log(word[0]));
+console.log(startsD);
+const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+const aboveFour = books.every(book => book.rating > 4);
+console.log(aboveFour);
+                    */
+                //every
+                    //tests whether ALL elements in the array pass the provided function, returns a BOOLEAN value, true if ALL, false if ANY
+                    /*
+                    const words = ['dog', 'dig', 'log', 'bag', 'waggy'];
+const threeLetters = words.every(word => {
+    return word.length === 3;
+});
+console.log(threeLetters);
+const endInG = words.every(word => {
+    const last = word.length - 1;
+    return word[last] === 'g';
+})
+console.log(endInG);
+                    */
+                //sort
+                    //arr.sort(compareFunc(a, b))
+                     //if compareFunc(a, b) returns less than zero --> Sort a before b
+                     //if compareFunc(a, b) returns zero --> leave a+b unchanged with respect to each other
+                     //if compareFunc(a, b) returns greater than zero --> Sort b before a
+                     /*
+const prices = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
+let loSorted = prices.slice().sort((a, b) => a - b);
+let hiSorted = prices.slice().sort((a, b) => b - a);
+console.log(loSorted);
+console.log(hiSorted);
+//keep in mind that you aren't making new arrays, you are mutating them, so trying to do two things in succession does not always work
+const books = [{
+    title: 'Fight Club',
+    author: ['Chuck Palahniuk'],
+    rating: 5
+},
+{
+    title: 'Women In Love',
+    author: ['DH Lawrence'],
+    rating: 5
+},
+{
+    title: 'Cherry',
+    author: ['Nico Walker'],
+    rating: 4.5
+},
+{
+    title: 'IT',
+    author: ['Stepehen King'],
+    rating: 4.5
+}
+];
+const sortedBooks = books.sort((a, b) => b.rating - a.rating);
+console.log(sortedBooks);
+                     */
