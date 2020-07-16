@@ -1156,6 +1156,9 @@ console.log(cherryBook);
                     //Executes a reducer function on each element of the array, RESULTING IN A SINGLE VALUE
                     //takes an array of values and reduces them down to a single value
                     //array.reduce((total, currentValue) => {return total + currentValue});
+                    //accumaltor stores end value of reduce, currentValue represents each item in array
+//accumulator starts as first value in array, currentValue starts as second item in the array
+//can use reduce to find maximum value
                     /*
                     const nums = [3, 4, 5, 6, 7];
 const tPlied = nums.reduce((total, current) =>{
@@ -1170,6 +1173,20 @@ const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64, 107];
 // })
 let highGrade = grades.reduce((high, current) => current > high ? current : high);
 console.log(highGrade);
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+// let result = votes.reduce((tally, val) => {
+//     if(tally[val]) {
+//         tally[val]++
+//     } else {
+//         tally[val] = 1;
+//     }
+//     return tally;
+// }, {})
+let result = votes.reduce((tally, val) =>{
+    tally[val] = (tally[val] || 0) + 1;
+    return tally;
+}, {})
+console.log(result);
 
                     */
                 //some
@@ -1227,7 +1244,7 @@ let loSorted = prices.slice().sort((a, b) => a - b);
 let hiSorted = prices.slice().sort((a, b) => b - a);
 console.log(loSorted);
 console.log(hiSorted);
-//keep in mind that you aren't making new arrays, you are mutating them, so trying to do two things in succession does not always work
+//keep in mind that you aren't making new arrays, you are mutating them, so trying to do two things in succession does not always work, a preslice before allows you to do this
 const books = [{
     title: 'Fight Club',
     author: ['Chuck Palahniuk'],
@@ -1251,4 +1268,232 @@ const books = [{
 ];
 const sortedBooks = books.sort((a, b) => b.rating - a.rating);
 console.log(sortedBooks);
+7/15/2020
                      */
+//7-16-2020
+    //OTHER USEFUL THINGS
+    //GOALS
+        //Work with rest and spread
+            //Rest! it looks like spread, but isn't. Same three dots, almost like opposite of spread, instead of spreading data out into args, arrays and objects, it collects them down into a single array
+                //Arguments Object
+                    //available inside every function
+                    //it's an array-like object 
+                        //has a length property
+                        //does NOT have array methods like push/pop
+                        //contains ALL the arguments passed into the function
+                        //have to turn it into an array if you want array methods
+                        //NOT available inside arrow functions
+                        // function sum() {
+//     const argsArr = [...arguments];
+//     return argsArr.reduce((total, currVal) => {
+//         return total + currVal
+//     })
+// }
+// let test = console.log(sum(1, 2, 3));
+// function fullName(first, last) {
+//     console.log(arguments);
+//     console.log(`First: ${first}`);
+// }
+// fullName('tim', 'jones', 'III', 'Order of Phoenix');
+                //NEW REST SYNTAX
+                    //same ellipsis; you put it into a functions args
+                    //collects all remaining objects into an actual array
+            //Spread syntax allows an iterable such as an array to be expanded in places where zero or more args (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected--EXPANDING SOME LITERAL TO SOME OTHER PLACE OR DESTINATION
+            // function sum(...nums) {
+    // console.log(nums);
+//     return nums.reduce((total, currVal) => total + currVal);
+// };
+// console.log(sum(4, 5, 6, 7));
+//use it to collect all remaining args that have not been matched with a parameter
+// function fullName(first, last, ...titles){
+//     console.log('first', first);
+//     console.log('last', last);
+//     console.log('titles', titles);
+// }
+//can't use multiple rests within one function's args, again, order matters, has to be the last parameter, can use in an arrow function
+// const mult = (...nums) => (nums.reduce((total, currentVal) => total * currentVal));
+// let exOne = mult(2, 3, 4);
+// console.log(exOne);
+                //For Function Calls
+                    //expands an iterable (array, string, etc) into a list of arguments
+                    // const nums = [23, 45, 333, 43, 567, 122, 678, 2, 45, 6];
+// let test = Math.max(...nums);
+// //the '...' is your spread, it SPREADS the array into individual arguments
+// console.log(test);
+// function giveMeFour(a, b, c, d) {
+//     console.log('a', a);
+//     console.log('b', b);
+//     console.log('c', c);
+//     console.log('d', d);
+// }
+// const colors = ['red', 'orange', 'yellow', 'green'];
+// giveMeFour(4,5,6,7);
+// giveMeFour(colors);
+// giveMeFour(...colors);
+                //For Array Literals
+                    // const cephalopods = ['dumbo octopus', 'humbolt squid', 'flamboyant cuttlefish'];
+// const gastropods = ['giant african snail', 'banana slug', 'variable neon slug'];
+// const cnidaria = ['fire coral', 'moon jelly'];
+
+//both cephalopods and gastropods are mollusks, making a new array with both of them called mollusca is shown below
+// const mollusca = [...cephalopods, ...gastropods];
+//to add something to the array
+// const mollusca = ['rock shrimp',...cephalopods, ...gastropods]
+// console.log(mollusca);
+//one of the best uses is just simply copying an array
+// const cephCopy = [...cephalopods];
+// console.log(cephCopy);
+//spreading other types of data into an array
+//split is old way
+// let exOne = 'abcdef'.split('');
+// let exTwo = [...'abcdef'];
+// console.log(exOne);
+// console.log(exTwo);
+            //For Object Literals
+                //copies properties from one object into another object literal
+                // const feline = {
+//     legs: 4,
+//     family: 'Felidae'
+// };
+
+// const canine = {
+//     legs: 4,
+//     family: 'Caninae'
+// };
+
+// const dog = {
+//     ...canine,
+//     isPet: true,
+//     adorable: true
+// };
+
+// const houseCat = {
+//     ...feline,
+//     isGrumpy: true,
+//     personality: 'unpredictable'
+// };
+
+// const tripod = {
+//     ...canine,
+//     legs: 3
+// };
+//this above is the order if you want to change any properties from the spread, putting the 'custom' property before the spread will make it get overwritten
+//can clone objects but it only goes one level deep, can't clone nested properies, like with spreading arrays...nested stuff is undoable!!
+//can spread objects into other objects, but can't spread an object into an array. Yet CAN spread an array into an object, it makes the key the index. Can also use spreads and objects so long as you are within an array
+// console.log(dog);
+// console.log(houseCat);
+        //Add default function parameters
+            //// function multiply(x, y) {
+//     return x * y;
+// }
+// //no y parameter leads to undefined
+// function multiply(x, y) {
+//     // if(typeof y === 'undefined') {
+//     //     y = 1;
+//     // }
+//     // y = typeof y === 'undefined' ? 1 : y;
+//     //two old ways above, new way below
+//     return x * y;
+// }
+
+// function multiply(x, y = 1) {
+//     return x * y;
+// }
+
+// const greet = (person, greeting = 'Hiyah!') => {
+//     console.log(`${greeting}, ${person}!`);
+// }
+// greet('Tim');
+// const blah = (x, y=[1,2,3]) => {
+//     console.log(x, y);
+// }
+// blah(2);
+//just remember your order matters, can't have defaults and non defaults that don't sync up. Keep default parameters at the end
+        //Understand destructuring
+            //A short, clean syntax to 'unpack':
+                //Values from arrays
+                //Properties from objects
+            //...into distinct variables
+                //Array Destructuring -unpack specific values out of that array into new variables
+                // const raceResults = [
+//     'Eliud Kipchoge',
+//     'Feyisa Lelisa',
+//     'Galen Rupp',
+//     'Ghirmay Ghebreslassie',
+//     'Alphonce Simbu',
+//     'Jared Ward'
+// ];
+
+// const [gold, silver, bronze] = raceResults;
+// const [first] = raceResults;
+// const [, , , fourth] = raceResults;
+// const [winner, ...others] = raceResults;
+//this will go into race results, and use the order to set the variables here in this array to the original array itself, with three new variables for the first three things in the array
+// console.log(winner);
+// console.log(others);
+//come up with variables, assign them to the array you want to unpack, mind your indices
+                //Object Destructuring
+                    //can unpack values from an object into standalone variables, difference being that in arrays you unpack via index, but in objects you base it off the name of the property
+                    // const runner = {
+//     first: 'Eliud',
+//     last: 'Kipchoge',
+//     country: 'Kenya',
+//     title: 'Elder of the Order of the Golden Heart of Kenya'
+// };
+
+// const {first, last} = runner;
+// const {country: nation, title: honorific} = runner;
+// console.log(first, last, nation, honorific);
+//variables must be existing key names within object
+//can use rest operator like with arrays"
+// const {first, last, ...other} = runner;
+// console.log(other);
+//rather than position, property name
+                    //Nested Destructuring
+                        //// const results = [{
+//     first: 'Eliud',
+//     last: 'Kipchoge',
+//     country: 'Kenya'
+// },
+// {
+//     first: 'Feyisa',
+//     last: 'Lilesa',
+//     country: 'Ethiopia'
+// },
+// {
+//     first: 'Galen',
+//     last: 'Rupp',
+//     country: 'United States'
+// }
+// ];
+//country of second place
+// const [,{country}] = results;
+// console.log(country);
+//firstName of winner of first place, country of second place, lastName of third place
+// const [{first}, {country}, {last}] = results;
+// console.log(first, country, last);
+                //Function Parameter Destructuring
+                // const runner = {
+//     first: 'Eliud',
+//     last: 'Kipchoge',
+//     country: 'Kenya',
+//     title: 'Elder of the Order of the Golden Heart of Kenya'
+// };
+// function print(person) {
+//     const {first, last, title} = person;
+//     console.log(`${first} ${last}, ${title}`);
+// }
+// print(runner);
+// function print({first, last, title}) {
+//     console.log(`${first} ${last}, ${title}`);
+// };
+
+// const response = [
+//     'HTTP/1.1',
+//     '200 OK',
+//     'application/json'
+// ]
+// function parseResponse([proto, statusCode, contentType]) {
+//     console.log(`Status: ${statusCode}`);
+// }
+// parseResponse(response);
