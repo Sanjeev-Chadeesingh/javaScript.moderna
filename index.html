@@ -385,7 +385,7 @@
   <div class="col-12">
       <div class="card card__july17">
           <div class="card-body card__july17-body">
-            <h5 class="card-title text-center card__july17--title">Stock Take Since The Jump: July 17<sup>th</sup> 10:50AM</h5>
+            <h5 class="card-title text-center card__july17--title">Stock Take Since The Jump: July 17+18+19<sup>th</sup> 10:50AM</h5>
           </div>
           <ul class="list-group list-group-flush card__july17--group">
             <li class="list-group-item card__july17--tenetTitle">To Review</li>
@@ -408,6 +408,50 @@
           <p class="text-left p-3 card__july17--notes"><span class="green">&nbsp;&nbsp;&nbsp; let</span> <span class="blue">circ</span> = 2 * PI * radius;</p>
           <p class="text-left p-3 card__july17--notes"><span class="purple">}</span>;</p>
           <p class="text-left p-3 card__july17--notes"><span class="green">PI+circ</span> are scoped within the block of the if statement above, they aren't accessible anywhere else</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">if</span><span class="lightBlue">(true)</span> <span class="purple">{</span></p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;<span class="green">var</span> <span class="blue">animal</span> = <span class="yellow">'eel'</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">console.log(<span class="lightBlue">eel</span></span><span class="blue">)</span>;</p>
+          <p class="text-left p-3 card__july17--notes">The above line works, can log <span class="blue">animal</span> outside of the block. After block, it logs <span class="blue">animal</span> fine. Before the block, it logs <span class="yellow">undefined</span>. <span class="green">let+const</span> DO NOT WORK. This is one example of where they differ from <span class="blue">var</span>.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="green">let</span> is good for <span class="green">LOOPS</span>, it scopes the iterator to the block. <span class="blue">var</span> based blocks allow access outside of said blocks. The iterator is always available, regardless of where you are.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="green">let+const</span> cannot be reused if in the same block, whereas <span class="blue">var</span> can be.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">doubleArr</span><span class="lightBlue">(arr)</span> <span class="purple">{</span></p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;<span class="green">const</span> <span class="blue">result</span> = <span class="white">[]</span>;</p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;<span class="blue">for</span><span class="lightBlue">(<span class="blue">let</span> num of arr)</span><span class="purple"> {</span></p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="green">let</span> <span class="blue">double</span> = <span class="blue">num</span> * <span class="white">2</span>;</p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="blue">result</span><span class="yellow">.push</span><span class="lightBlue">(double)</span>;</p>
+          <p class="text-left p-3 card__july17--notes">&nbsp;&nbsp;&nbsp;<span class="purple">}</span></p>
+          <p class="text-left p-3 card__july17--notes"><span class="purple">return</span> <span class="blue">result</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">console.log(<span class="lightBlue">doubleArr([1, 2, 3])</span>)</span>;</p>
+          <p class="text-left p-3 card__july17--notes">If had set <span class="blue">var</span>s instead of <span class="green">let+const</span>, could have logged things inside and out of blocks within both functions and loops</p>
+          <p class="text-left p-3 card__july17--notes">You have access in a block to variables created outside the block.</p>
+          <p class="text-left p-3 card__july17--notes">Could use <span class="blue">var</span> instead of let when naming <span class="white">double</span>, and you'd have access to <span class="white">double</span> outside the block it is in.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="green">const</span> can't be reassigned, nor can it be redeclared. Can change or mutate <span class="green">let</span>, but both are block scoped.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">var</span> you can basically do whatever with. VAR IS NOT BLOCK SCOPED</p>
+          <hr>
+          <p class="text-left p-3 card__july17--notes"><strong>Lexical Scope:</strong></p>
+          <p class="text-left p-3 card__july17--notes">When we have nested functions, they are lexically bound, meaning they are bound to the scope of their parents or outer functions, but parents' don't have access to the scope of their children or outer functions.</p>
+          <p class="text-left p-3 card__july17--notes">Access moves one block level up at a time. If they don't find what they need one block out, they move to the next block out.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">outer()</span> <span class="purple">{</span> <br> <span class="green">&nbsp;&nbsp;&nbsp;let <span class="lightBlue">movie</span></span> = <span class="white">'Amadeus'</span>; <br> <span class="blue">&nbsp;&nbsp;&nbsp;function</span> <span class="yellow">inner()</span><span class="purple"> {</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">let </span><span class="blue">movie</span> = <span class="white">'The Shining'</span>; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">function</span> <span class="yellow">extraInner()</span> <span class="purple">{</span> <br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console.log(<span class="lightBlue">movie.toUpperCase())</span></span>; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">}</span><br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow">extraInner()</span>; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">}</span>; <br> &nbsp;&nbsp;&nbsp;&nbsp;<span class="yellow">inner()</span>; <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">}</span>; <br> <span class="yellow">outer()</span>;</p>
+          <p class="text-left p-3 card__july17--notes">Above line logs <span class="white">'The Shining'</span></p>
+          <hr>
+          <p class="text-left p-3 card__july17--notes"><strong>Function Expressions</strong></p>
+          <p class="text-left p-3 card__july17--notes">The act of storing a function in a variable. Can do this because functions are objects. <span class="blue">console.dir</span> on a function will print out the object form of the function expression.</p>
+          <p class="text-left p-3 card__july17--notes"><strong>anonymous function expression:</strong></p>
+          <p class="text-left p-3 card__july17--notes"><span class="green">let</span> <span class="blue">add</span> = <span class="yellow">function</span><span class="lightBlue">(x, y) <span class="purple">{</span></span> <br> &nbsp;&nbsp;&nbsp; <span class="white">return </span><span class="blue"> x + y</span>; <br> <span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><strong>named function expression (still called by variable declaration, so <span class="blue">sum()</span> to call it):</strong></p>
+          <p class="text-left p-3 card__july17--notes"><span class="green">let</span> <span class="blue">sum</span> = <span class="blue">function</span> <span class="yellow">add</span><span class="lightBlue">(x, y) <span class="purple">{</span></span> <br> &nbsp;&nbsp;&nbsp; <span class="white">return </span><span class="blue"> x + y</span>; <br> <span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes">FUNCTIONS ARE SIMPLY VALUES IN JAVASCRIPT, WE CAN STORE THEM IN AN ARRAY, CALL THEM DYNAMICALLY, PUT THEM IN VARIABLES THROUGH LOOPS, THEY ARE JUST PLACEHOLDER NAMES, CAN PUT THEM IN OBJECTS, CAN USE FUNCTIONS IN FUNCTIONS</p>
+          <hr>
+          <p class="text-left p-3 card__july17--notes"><strong>Higher Order Functions</strong></p>
+          <p class="text-left p-3 card__july17--notes">functions that operate on/with other functions. They can accept other functions as arguments or they can return functions.</p>
+          <p class="text-left p-3 card__july17--notes">accepting other function as argument:</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">callThreeTimes</span><span class="lightBlue">(f)</span> <span class="purple">{</span> <br> &nbsp;&nbsp;&nbsp;<span class="blue">f()</span>; <br> &nbsp;&nbsp;&nbsp;<span class="blue">f()</span>; <br> &nbsp;&nbsp;&nbsp;<span class="blue">f()</span>; <br> <span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">cry()</span> <span class="purple">{</span> <br> &nbsp;&nbsp;&nbsp; <span class="lightBlue">console.log</span><span class="blue">(<span class="yellow">'Boohoo I am So Sad'</span></span><span class="blue">)</span>; <br> <span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes"><span class="yellow">callThreeTimes(<span class="blue">cry</span>)</span>;</p>
+          <p class="text-left p-3 card__july17--notes">Above logs to console: <br><span class="white">'Bohoo I am So Sad'</span><br><span class="white">'Bohoo I am So Sad'</span><br><span class="white">'Bohoo I am So Sad'</span><br></p>
+          <p class="text-left p-3 card__july17--notes"></p>
           <p class="text-left p-3 card__july17--notes"></p>
           <p class="text-left p-3 card__july17--notes"></p>
           <p class="text-left p-3 card__july17--notes"></p>
