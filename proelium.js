@@ -1503,3 +1503,13 @@ console.log(sortedBooks);
 //     console.log(`Status: ${statusCode}`);
 // }
 // parseResponse(response);
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+//7-20-2020 -- OBJECTS AND THIS!!!
+    //add methods to objects
+    //use new object shorthand syntax
+        //Shorthand Property
+        //easy way to create an object literal when you have variables
+    //use computed properties
+    //understand prototypes
+    //explain how THIS works

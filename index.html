@@ -385,7 +385,7 @@
   <div class="col-12">
       <div class="card card__july17">
           <div class="card-body card__july17-body">
-            <h5 class="card-title text-center card__july17--title">Stock Take Since The Jump: July 17+18+19<sup>th</sup> 10:50AM</h5>
+            <h5 class="card-title text-center card__july17--title">Stock Take Since The Jump: July 17+18+19+20<sup>th</sup> 10:50AM</h5>
           </div>
           <ul class="list-group list-group-flush card__july17--group">
             <li class="list-group-item card__july17--tenetTitle">To Review</li>
@@ -451,6 +451,15 @@
           <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">cry()</span> <span class="purple">{</span> <br> &nbsp;&nbsp;&nbsp; <span class="lightBlue">console.log</span><span class="blue">(<span class="yellow">'Boohoo I am So Sad'</span></span><span class="blue">)</span>; <br> <span class="purple">}</span>;</p>
           <p class="text-left p-3 card__july17--notes"><span class="yellow">callThreeTimes(<span class="blue">cry</span>)</span>;</p>
           <p class="text-left p-3 card__july17--notes">Above logs to console: <br><span class="white">'Bohoo I am So Sad'</span><br><span class="white">'Bohoo I am So Sad'</span><br><span class="white">'Bohoo I am So Sad'</span><br></p>
+          <p class="text-left p-3 card__july17--notes">functions returning other functions:</p>
+          <p class="text-left p-3 card__july17--notes">Functios are values that can be passed around. When returning functions, think of it as a function factory, producing (returning) functions ad naseum.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">function</span> <span class="yellow">makeBetweenFunc</span> <span class="lightBlue">(x, y)</span> <span class="purple">{</span> <br> &nbsp;&nbsp;&nbsp; <span class="purple">return </span> <span class="blue">function(num)</span> <span class="purple">{</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">if</span><span class="blue">(num &gt;= x && num &lt;= y) </span> <span class="purple"> {</span> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="purple">return </span><span class="blue">true</span>;<br> &nbsp;&nbsp;&nbsp;<span class="purple">}</span> <br> <span class="purple">return <span class="blue">false</span></span>; <br> <span class="purple">}</span>;</p>
+          <p class="text-left p-3 card__july17--notes">Callbacks are brought up, with DOM manipulation, will get back to them.</p>
+          <p class="text-left p-3 card__july17--notes"><strong>Hoisting</strong> &rarr; When javascript is interpreting code, it HOISTS up var declarations. Does not move them, or reorganize your code, but it does HOIST them to the top. Make sure you are always declaring and initializing your variables before using them.</p>
+          <p class="text-left p-3 card__july17--notes"><span class="blue">let+const</span> declarations are not hoisted.</p>
+          <p class="text-left p-3 card__july17--notes">Function declarations are hoisted.</p>
+          <p class="text-left p-3 card__july17--notes">Function expressions aren't hoisted, exactly. Javascript knows there's a variable, just doesn't know the value. Spits back <span class="white">undefined</span>.</p>
+          <hr>
           <p class="text-left p-3 card__july17--notes"></p>
           <p class="text-left p-3 card__july17--notes"></p>
           <p class="text-left p-3 card__july17--notes"></p>
