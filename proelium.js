@@ -1505,11 +1505,19 @@ console.log(sortedBooks);
 // parseResponse(response);
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
-//7-20-2020 -- OBJECTS AND THIS!!!
+//7-21-2020 -- OBJECTS AND THIS!!!
     //add methods to objects
     //use new object shorthand syntax
         //Shorthand Property
         //easy way to create an object literal when you have variables
+        const getStats = (arr) => {
+            const max = Math.max(...arr);
+            const min = Math.min(...arr);
+            const sum = arr.reduce((sum, r) => sum + r);
+            const avg = sum / arr.length;
+        };
+        const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
+        const stats = getStats(review);
     //use computed properties
     //understand prototypes
     //explain how THIS works
