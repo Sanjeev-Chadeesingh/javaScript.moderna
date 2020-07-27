@@ -1,48 +1,57 @@
-//7-21-2020 -- OBJECTS AND THIS!!!
+//7-26-2020 -- OBJECTS AND THIS!!!
     //add methods to objects
     //use new object shorthand syntax
-        //Shorthand Property
-        //easy way to create an object literal when you have variables
-        const getStats = (arr) => {
-            const max = Math.max(...arr);
-            const min = Math.min(...arr);
-            const sum = arr.reduce((sum, r) => sum + r);
-            const avg = sum / arr.length;
-            return {
-                // max: max,
-                // min: min,
-                // sum: sum,
-                // avg: avg THIS IS THE OLD WAY
-                //SHORTHAND BELOW
-                max,
-                min,
-                sum,
-                avg
-            }
-        };
-        const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
-        // const stats = getStats(reviews);
-        // console.log(stats);
     //use computed properties
     //understand prototypes
     //explain how THIS works
 
-    
-   
-
-    const picker = (arr) => {
-        let idx = Math.floor(Math.random() * arr.length);
-        return arr[idx];
-    }
-
-    let cardMaker = () => {
-        let suits = ['clubs', 'diamonds', 'hearts', 'spades'];
-        let values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-        let cardSuit = picker(suits);
-        let cardValue = picker(values);
+    //shorthand properties
+    const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
+    const getStats = (arr) => {
+        const max = Math.max(...arr);
+        const min = Math.min(...arr);
+        const sum = arr.reduce((t, cV) => t + cV);
+        const avg = sum / arr.length;
         return {
-            cardSuit,
-            cardValue
+            max,
+            min,
+            sum,
+            avg
         }
     };
-    console.log(cardMaker());
+    console.log(getStats(reviews));
+
+    //computed properties
+        //improvement on object literal syntax
+        //adding a property with a dynamic key
+        //we can use a variable as a key name in an object literal property
+    const role = 'host';
+    const person = 'Jools Holland';
+    const role2 = 'director';
+    const person2 = 'James Cameron';
+    const team = {
+        [role]: person,
+        [role2]: person2,
+        [1 + 6 + 9]: 'sixteen'
+    }
+
+    const addProp = (obj, k, v) => {
+        return {...obj, [k]: v};
+    }
+    const res = addProp(team, 'happy', ';)');
+    console.log(res);
+
+    //adding methods to objects
+        //we can add functions as properties on objects. We call them methods!
+    const math = {
+        add(x, y) {
+            return x + y;
+        },
+        multiply(x, y) {
+            return x * y;
+        }
+    }
+    let test = math.add(3, 4);
+    console.log(test);
+    let test2 = math.multiply(3, 4);
+    console.log(test2);
