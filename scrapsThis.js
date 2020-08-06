@@ -1,6 +1,6 @@
 //7-26-20 - THIS!!
     //think of it as a reference to the current execution scope
-        //will give an object back. so depending on scope and rules on 'this,' the object will be changes
+        //will give an object back. so depending on scope and rules on 'this,' the object will be changed
     function sayHi() {
         console.log('Hi');
         console.log(this);

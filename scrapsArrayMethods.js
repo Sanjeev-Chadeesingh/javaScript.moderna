@@ -19,3 +19,5 @@
         return a - b;
     });
     console.log(sortedNums);
+    let test = exThree.reverse();
+    console.log(test);
