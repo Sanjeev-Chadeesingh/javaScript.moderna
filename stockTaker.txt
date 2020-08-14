@@ -1,6 +1,24 @@
 8/7/2020
 **loops
-**functions
-**
-**
-**
+    *for
+    *for...of
+    *for...in
+    *while
+
+**earlyMethods
+    *concat
+    *includes
+    *indexOf
+    *join
+    *reverse
+    *slice
+    *splice
+
+**array callback methods
+    *forEach
+    *map
+    *filter
+    *find
+    *reduce
+    *some
+    *every
