@@ -4,6 +4,8 @@
     *for...of
     *for...in
     *while
+    *block scope in loops
+    *returning objects
 
 **earlyMethods
     *concat
@@ -13,12 +15,15 @@
     *reverse
     *slice
     *splice
+    *split
 
 **array callback methods
     *forEach
     *map
-    *filter
     *find
-    *reduce
-    *some
+    *filter
     *every
+    *some
+    *sort
+    *reduce
+        -lots of reduce, look it up! unclear so far.
