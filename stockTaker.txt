@@ -1,4 +1,5 @@
-8/7/2020
+**switch statements
+
 **loops
     *for
     *for...of
@@ -8,22 +9,47 @@
     *returning objects
 
 **earlyMethods
-    *concat
+    *concat -merges arrays, neither updates or mutates
+    
     *includes
+    
     *indexOf
-    *join
-    *reverse
+    
+    *join -creates a string from an array
+    
+    *reverse -reverses the order of an array
+    
     *slice
+    
     *splice
+    
     *split
 
+**return value
+    *when arrow points to the left in the chrome console, you are looking at a return value
+    *can only return one value from a function
+    *export or return value to store or use later
+
 **array callback methods
-    *forEach
-    *map
-    *find
-    *filter
-    *every
-    *some
-    *sort
-    *reduce
+    *forEach -runs a cb for each element in the array, doesn't create a new value / array
+
+    *map -runs a cb on each element in the array, puts the newly made elements into a new array
+    
+    *find -runs a boolean cb, returns the first element that satisfies the boolean
+    
+    *filter -creates a new array subset, of elements satisying the boolean cb
+    
+    *every -tests whether all elements in an array satisfy the provided boolean cb
+    
+    *some -tests whether some elements in an array satisfy the provided boolean cb
+    
+    *sort -mutates original array via a comparing function, can use slice to make a new array
+    
+    *reduce -reduces an entire array down to a single value via a reducer function
         -lots of reduce, look it up! unclear so far.
+
+**new javascript features
+    *spread
+        *function args, arrays and objects
+    *rest
+    *destructuring

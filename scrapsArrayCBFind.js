@@ -1,4 +1,4 @@
-//8-14-2020 MAP *returns the first element in the array that satisfies the provided testing function
+//8-14-2020 FIND *returns the first element in the array that satisfies the provided testing function
     //boolean function that needs to return true or false
     //stops after finding first case
 let movies = [
