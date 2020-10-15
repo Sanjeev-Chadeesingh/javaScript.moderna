@@ -1,32 +1,55 @@
-//go through the forEach map filter find some every reduce HELLSCAPE that is your greatest perceived threat.  Then go through everything else, and make it into something regarding wordpress tomorrow night
-
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-const strs = ['cat', 'dog', 'frog', 'lizard', 'hawk', 'dove'];
+const names = ['Tom', 'Bob', 'Bob', 'Tom', 'Tom', 'Bob', 'Tom', 'Bob', 'Tom', 'Tom', 'Bob', 'Bob', 'Bob', 'Tom', 'Tom', 'Bob', 'Tom', 'Tom'];
 
 const books = [{
     title: 'Good Omens',
     authors: ['Terry Pratchett', 'Neil Gaiman'],
-    rating: 4.25
+    rating: 4.25,
+    genre: 'fantasy'
 },
 {
     title: 'Bone: The Complete Edition',
     authors: ['Jeff Smith'],
-    rating: 4.42
+    rating: 4.42,
+    genre: 'literary'
 },
 {
     title: 'American Gods',
     authors: ['Neil Gaiman'],
-    rating: 4.11
+    rating: 3.11,
+    genre: 'fantasy'
 },
 {
     title: 'A Gentleman In Moscow',
     authors: ['Amor Towles'],
-    rating: 4.36
+    rating: 3.36,
+    genre: 'literary'
 }];
 
-const goodReview = books.filter((el) => {
-    return el.authors.length < 2;
-});
+const results = [{
+    first: 'Elvis',
+    last: 'Prestley',
+    country: 'USA'
+},
+{
+    first: 'John',
+    last: 'Lennon',
+    country: 'UK'
+},
+{
+    first: 'Neil',
+    last: 'Young',
+    country: 'Canada'
+}
+];
 
-console.log(goodReview);
+const runner = {
+    first: 'Jeeves',
+    last: 'Singh',
+    country: 'USA',
+    title: 'Uncertain and Unwilling'
+};
+const numbers = {
+    100: 'one hundred',
+    16: 'sixteen'
+};
+console.log(numbers[100]);

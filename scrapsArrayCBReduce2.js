@@ -31,8 +31,12 @@ const books = [{
 }];
 let result2 = books.reduce((groupedBooks, book) => {
     let key = Math.floor(book.rating);
-    if(!groupedBooks[key]) groupedBooks[key] = [];
-    groupedBooks[key].push(book);
+    if(!groupedBooks[key]) {
+        groupedBooks[key] = [];
+    } else {
+        groupedBooks[key].push(book);
+    }
+    
     return groupedBooks;
 }, {})
 console.log(result2);
