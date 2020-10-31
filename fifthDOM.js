@@ -1,0 +1,16 @@
+let parentTodo = document.querySelector('ul');
+let newTodo = document.createElement('li');
+newTodo.innerText = 'Get shit done coding-wise.';
+newTodo.classList.add('todo');
+// parentTodo.appendChild(newTodo);
+let firstLi = document.querySelector('li.todo');
+// parentTodo.insertBefore(newTodo, firstLi);
+let lastLi = document.querySelectorAll('li.todo')[2];
+// parentTodo.insertBefore(newTodo, lastLi);
+// firstLi.insertAdjacentElement('beforebegin', newTodo);
+lastLi.insertAdjacentElement('afterend', newTodo);
+lastLi.append(newTodo);
+parentTodo.removeChild(firstLi);
+let headerH1 = document.querySelector('h1.header');
+console.log(headerH1);
+// document.body.removeChild(headerH1);
