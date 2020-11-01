@@ -1,0 +1,31 @@
+DOM EVENTS
+
+    -Crucial
+        -events
+            -addEventListener
+            -form events
+
+    -Important
+        -keyboard events
+        -input+change events
+        -event bubbling
+        -event delegation
+
+someEvents
+    -clicks
+    -drags
+    -drops
+    -hovers
+    -scrolls
+    -form submission
+    -key presses
+    -focus/blur
+    -mouse wheel
+    -double click
+    -copying
+    -pasting
+    -audio start
+    -screen resize
+    -printing
+
+    
