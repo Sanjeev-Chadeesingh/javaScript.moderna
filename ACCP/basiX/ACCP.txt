@@ -1,0 +1,22 @@
+**CALLSTACK** a JS Interpreter
+    -how javascript knows what's going on in order of coded execution.
+    -Stack is a simple data structure, in which last thing you put is on top, most recently placed item, is the first thing out. Like grabbing from a stack of papers. 
+        -Last thing in first thing out.
+    -Chrome Dev tools => Sources => Play around and pause stack, see the order!!
+
+    -Javascript is Single Threaded
+        -it runs at most one line of code at a time
+        -The browser does the work in order to allow multiple threads to work
+            -browser comes with ability to handle certain tasks in the background through WEB API usage
+            *check latentflip.com/loupe to see breakdown of CallStack and WebApi's*
+                -javascript runs its code and puts in call stack
+                -any WEB API stuff runs, and gets placed in callback queue, waiting to be put onto the callstack.
+
+    -PROMISES -a pattern for writing async code
+        -A promise is an object representing the eventual completion or failure of an asynchronous operation
+            -you attach callbacks to this object
+        -A promise is a returned object to which you attach callbacks, instead of passing callbacks into a function
+            -const someThing = new Promise((resolve, reject) => {someCode})
+            -.then() runs when a given promise is resolved
+            -.catch() runs when a given promise is rejected
+        
