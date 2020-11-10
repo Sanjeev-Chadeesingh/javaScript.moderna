@@ -1,45 +1,33 @@
-// const willGetYouADog = new Promise((resolve, reject) => {
-//     const rand = Math.random();
-//     if(rand < .5) {
-//         resolve();
-//     } else {
-//         reject();
-//     }
-// });
-
-// willGetYouADog.then(() => {
-//     console.log(`Yay we got a dog`);
-// }).catch(() => {
-//     console.log(`No dog for us`);
-// })
-
-// const makeDogPromise = () => {
+// const dogPromise = () => {
 //     return new Promise((resolve, reject) => {
+//         let rand = Math.random();
 //         setTimeout(() => {
-//             const rand = Math.random();
 //             if(rand < .5) {
-//                 resolve();
+//                 reject({status: 404});
 //             } else {
-//                 reject();
+//                 resolve({status: 200});
 //             }
-//         }, 5000);  
-//     });
-// };    
-//     makeDogPromise().then(() => {
-//         console.log(`Yay we got a dog`);
-//     }).catch(() => {
-//         console.log(`No dog for us`);
+//         }, 3000)
 //     })
+// };
+
+// dogPromise().then((res) => {
+//     console.log('RESOLVED!');
+//     console.log(res.status);
+// }).catch((res) => {
+//     console.log('REJECTED')
+//     console.log(res.status);
+// });
 
 const fakeRequest = (url) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
                 const pages = {
-                    './users': [
+                    '/users' : [
                         {id: 1, username: 'Bilbo'},
                         {id: 5, username: 'Esmerelda'}
                     ],
-                    './about' : 'This is the about page.'
+                    '/about' : 'This is the about page.'
                 };
                 const data = pages[url];
                 if(data) {
@@ -47,17 +35,24 @@ const fakeRequest = (url) => {
                 } else {
                     reject({status: 404});
                 }
-                
-        }, 3000)
-    })
+        }, 1000)
+    });
 };
-
-fakeRequest('./users')
-.then((res) => {
-    console.log('Status Code', res.status);
-    console.log('Data', res.data)
-    console.log(`Request Worked`);
+fakeRequest('/users').then((res) => {
+    console.log(res.data);
+    console.log(`Status code: ${res.status}`);
+    console.log(`Data: ${res.data[0].username}`);
+    console.log('REQUEST WORKED');
 }).catch((res) => {
     console.log(res.status);
-    console.log(`Request Failed`);
-})
+    console.log('REQUEST FAILED');
+});
+
+fakeRequest('/dogs').then((res) => {
+    console.log(`Status code: ${res.status}`);
+    console.log(`Data: ${res.data}`);
+    console.log('REQUEST WORKED');
+}).catch((res) => {
+    console.log(res.status);
+    console.log('REQUEST FAILED');
+});

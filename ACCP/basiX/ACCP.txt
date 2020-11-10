@@ -14,9 +14,12 @@
 
     -PROMISES -a pattern for writing async code
         -A promise is an object representing the eventual completion or failure of an asynchronous operation
-            -you attach callbacks to this object
+            -you attach callbacks to this object as function parameters
+                -resolveCB();
+                -rejectCB();
         -A promise is a returned object to which you attach callbacks, instead of passing callbacks into a function
             -const someThing = new Promise((resolve, reject) => {someCode})
             -.then() runs when a given promise is resolved
             -.catch() runs when a given promise is rejected
-        
+        -When you reject or resolve, you can do this with a value and you'll have access to this value in your cb that you pass into then() or catch()
+        -You can attach data to resolve() and reject(), You call them as someThing, whether in then() for resolve() || catch() for reject. someThing goes in the callback.

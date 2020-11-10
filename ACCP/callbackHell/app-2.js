@@ -1,5 +1,33 @@
 const btn = document.querySelector('button');
 
+const moveX = (element, amount, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => { 
+            const bodyBoundary = document.body.clientWidth;
+            const elRight = element.getBoundingClientRect().right;
+            const currLeft = element.getBoundingClientRect().left;
+            if(elRight + amount > bodyBoundary) {
+                reject({bodyBoundary, elRight, amount});
+            } else { 
+            element.style.transform = `translateX(${currLeft + amount}px)`;
+            resolve();
+            }
+        }, delay)
+    });
+};
+
+moveX(btn, 300, 1000)
+.then(() => moveX(btn, 300, 1000))
+.then(() => moveX(btn, 300, 1000))
+.then(() => moveX(btn, 300, 1000))
+.then(() => moveX(btn, 300, 1000))
+.then(() => moveX(btn, 300, 1000))
+.catch(({bodyBoundary, amount, elRight}) => {
+    console.log(`OUTTA SPACE, CAN'T MOVE BEYOND ${bodyBoundary}px wide`);
+    console.log(`Element is at ${elRight}px, ${amount} is too large`);
+})
+
+
 // setTimeout(() => {
 //     btn.style.transform = `translateX(100px)`;
 //     setTimeout(() => {
@@ -16,20 +44,20 @@ const btn = document.querySelector('button');
 //     }, 1000);
 // }, 1000);
 
-const moveX = (element, amount, delay, onSuccess, onFailure) => {
-        setTimeout(() => { 
-            const bodyBoundary = document.body.clientWidth;
-            const elRight = element.getBoundingClientRect().right;
-            const currLeft = element.getBoundingClientRect().left;
-            if(elRight + amount > bodyBoundary) {
-                onFailure();
-            } else { 
-            element.style.transform = `translateX(${currLeft + amount}px)`;
-            onSuccess();
-            }
-        }, delay)
+// const moveX = (element, amount, delay, onSuccess, onFailure) => {
+//         setTimeout(() => { 
+//             const bodyBoundary = document.body.clientWidth;
+//             const elRight = element.getBoundingClientRect().right;
+//             const currLeft = element.getBoundingClientRect().left;
+//             if(elRight + amount > bodyBoundary) {
+//                 onFailure();
+//             } else { 
+//             element.style.transform = `translateX(${currLeft + amount}px)`;
+//             onSuccess();
+//             }
+//         }, delay)
     
-};
+// };
 
 // moveX(btn, 100, 1000, () => {
 //     moveX(btn, 100, 1000, () => {
@@ -41,19 +69,19 @@ const moveX = (element, amount, delay, onSuccess, onFailure) => {
 //     })
 // });
 
-moveX(btn, 100, 1000, () => {
-    //success
-    moveX(btn, 400, 1000, () => {
-        moveX(btn, 700, 1000, () => {
-            console.log(`Space still left?`)
-        }, () => {
-            console.log(`Can't move further!`)
-        })
-    }, () => {
-        //fail
-        alert('CANNOT MOVE');
-    })
-}, () => {
-    //fail
-    alert('CANNOT MOVE');
-})
+// moveX(btn, 100, 1000, () => {
+//     //success
+//     moveX(btn, 400, 1000, () => {
+//         moveX(btn, 700, 1000, () => {
+//             console.log(`Space still left?`)
+//         }, () => {
+//             console.log(`Can't move further!`)
+//         })
+//     }, () => {
+//         //fail
+//         alert('CANNOT MOVE');
+//     })
+// }, () => {
+//     //fail
+//     alert('CANNOT MOVE');
+// })
