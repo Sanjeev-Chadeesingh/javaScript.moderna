@@ -23,3 +23,4 @@
             -.catch() runs when a given promise is rejected
         -When you reject or resolve, you can do this with a value and you'll have access to this value in your cb that you pass into then() or catch()
         -You can attach data to resolve() and reject(), You call them as someThing, whether in then() for resolve() || catch() for reject. someThing goes in the callback.
+

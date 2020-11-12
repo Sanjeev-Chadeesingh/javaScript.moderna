@@ -1,0 +1,23 @@
+    -REQUESTS
+        -not instantaneous, need to use callbacks and promises
+        -AJAX
+            Asynchronous Javascript And XML
+        -JSON and XML
+            -XML is like HTML but a bit more broad
+            -JSON JavaScript Object Notation
+                -every key must be string with double quotes
+                -can't store functions
+                -not javascript, but very close
+            -XMLHttpRequest
+                -og way of sending requests via JS
+                -does not support promises, lots of callbacks/weird capitalization/clunky syntax
+            -FETCH API
+                -Newer way of making requests via JS
+                -Supports promises
+                -Not supported in internet explorer
+                -resolves with a response object 
+                -check FETCH API on mdn
+                    -takes one mandatory argument, path (url), and returns a promise that resolves to the request as an object 
+                    -Response object is returned back
+                        -readable stream => a stream of readable byte data
+                        -Body.json() => takes a response stream and reads it to completion
