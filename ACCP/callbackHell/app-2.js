@@ -20,27 +20,46 @@ const btn = document.querySelector('button');
 // }, 1000);
 
 
-const moveX = (element, amount, delay, callback) => {
-    const bodyBoundary = document.body.clientWidth;
-    const elRight = element.getBoundingClientRect().right;
-    const currLeft = element.getBoundingClientRect().left;
-    if(elRight + amount > bodyBoundary) {
-        console.log('CANNOT GO FURTHER');
-    } else {
+const moveX = (element, amount, delay, onSuccess, onFailure) => {
+  
         setTimeout(() => {
+            const bodyBoundary = document.body.clientWidth;
+            const elRight = element.getBoundingClientRect().right;
+            const currLeft = element.getBoundingClientRect().left;
+            if(elRight + amount > bodyBoundary) {
+                onFailure();
+            } else {
             element.style.transform = `translateX(${currLeft + amount}px)`;
-            if(callback) callback();
+            onSuccess();
+            }
         }, delay)
-    }
 };
 
 
+// moveX(btn, 100, 1000, () => {
+//     moveX(btn, 100, 1000, () => {
+//         moveX(btn, 100, 1000, () => {
+//             moveX(btn, 100, 1000, () => {
+//                 moveX(btn, 800, 1000);
+//             })
+//         })
+//     })
+// });
+
 moveX(btn, 100, 1000, () => {
-    moveX(btn, 100, 1000, () => {
-        moveX(btn, 100, 1000, () => {
-            moveX(btn, 100, 1000, () => {
-                moveX(btn, 800, 1000);
-            })
+    //onSuccess
+    moveX(btn, 400, 1000, () => {
+        //onSuccess
+        moveX(btn, 700, 1000, () => {
+            console.log('REALLY, STILL SPACE?');
+        }, () => {
+            alert('cannot do it');
         })
+    }, () => {
+        //onFailure
+        alert('cannot do it')
     })
-});
+}, () => {
+    //onFailure
+    alert('cannot do it')
+})

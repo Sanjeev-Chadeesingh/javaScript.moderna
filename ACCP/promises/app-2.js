@@ -1,25 +1,30 @@
-const dogPromise = () => {
+const makeDogPromise = () => {
     return new Promise((resolve, reject) => {
-        let rand = Math.floor(Math.random() * 5) + 1;
         setTimeout(() => {
-            if(rand < 3) {
+            let rand = Math.random();
+            if(rand < .5) {
                 resolve();
             } else {
                 reject();
             }
-            
-        }, 1000)
-    })
-};
-dogPromise().then(() => {
-    console.log('DOG');
+        }, 5000);
+    });
+} 
+
+//this function RETURNS the promise
+makeDogPromise()
+.then(() => {
+    console.log('GOTTA DOG');
 })
 .catch(() => {
     console.log('NO DOG');
 });
 
+// const fightPromiser = () => {
+//     return new Promise((resolve, reject) => {
 
-
+//     })
+// }
 
  //const fighters = {
     //                 'fighters' : [
