@@ -103,21 +103,18 @@
 // });
 
 //https://developer.nps.gov/api/v1/parks&api_key=RWsguX4orfDsVSGEqeLVa6Y3UUiQpwdLd5BXcN7C
-fetch('https://developer.nps.gov/api/v1/parks?limit=497?&api_key=RWsguX4orfDsVSGEqeLVa6Y3UUiQpwdLd5BXcN7C')
-.then((res) => {
-    if(!res.ok)
-    throw new Error(`ERROR ${res.status}`);
-    console.log(`Status: ${res.status}`);
-    return res.json();
-})
-.then(({data}) => {
-    console.log(data);
-    data.forEach((park, index) => {
-        if(park.states === 'FL') {
-            console.log(park);
-        }
-    })
-})
-.catch((err) => {
-    console.log(err);
-})
+// fetch('https://developer.nps.gov/api/v1/parks?limit=497?&api_key=RWsguX4orfDsVSGEqeLVa6Y3UUiQpwdLd5BXcN7C')
+// .then((res) => {
+//     if(!res.ok)
+//     throw new Error(`Status error at ${res.status}`)
+//     return res.json();
+// })
+// .then(({data}) => {
+//     console.log(data);
+//     console.log(data[0]);
+//     data.forEach((park, index) => {
+//         console.log(`${index}) ${park.name}`);
+//     })
+// })
+// .catch((err) => console.log(err));
+

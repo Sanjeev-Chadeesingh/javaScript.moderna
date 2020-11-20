@@ -25,6 +25,13 @@ console.log(`LET's AXIOS, SHALL WE?`);
 
 axios.get('https://developer.nps.gov/api/v1/parks?limit=497?&api_key=RWsguX4orfDsVSGEqeLVa6Y3UUiQpwdLd5BXcN7C')
 .then((res) => {
-    console.log(res.data);
+    const {data} = res.data;
+    const flParks = data.filter((park) => {
+        return park.states === 'FL';
+    });
+    console.log('Florida Parks');
+    flParks.forEach((park, idx) => {
+        console.log(`${idx}) ${park.fullName}`);
+    })
 })
 .catch((err) => console.log(err));
