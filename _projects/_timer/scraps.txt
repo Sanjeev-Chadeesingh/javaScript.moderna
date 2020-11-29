@@ -1,0 +1,131 @@
+//this in Constructors
+    //we want this to specifically refer to the instance of the class it is within
+        // 3 this possibilities
+            //in an arrow function it is the instance of the this in the valid line above the arrow function
+            //this is equal to the first argument of bind, call or apply, if bind call or apply were called on the function when it was invoked
+            //all other cases, this is equal to whatever is to the left of the dot on a method call
+
+Things Our Program Does
+-displays a small timer
+-shows an animated border around the timer
+    -we should be isolating the disparate parts of our program into blocks
+    
+    Event Based Architecture and Implementation
+        -We are alternating what each line of code does in our design implementation
+
+        Evented Style Approach
+            -let timer emit event/ notification throughout lifecycle so other parts of application can watch and act accordingly
+
+        Class Based Implementation
+            -class Timer
+                -constructor(durationInput, startButton, pauseButton)
+                -start()
+                -pause()
+                -onDurationChange()
+                -tick()
+
+class Timer {
+    constructor(durationInput, startButton, pauseButton) {
+        this.durationInput = durationInput;
+        this.startButton = startButton;
+        this.pauseButton = pauseButton;
+
+        this.startButton.addEventListener('click', this.start);
+
+        // this.startButton.addEventListener('click', this.start.bind(this));
+    }
+
+    start = () => {
+        this.importantMethodToCall();
+    }
+
+    // start() {
+    //     this.importantMethodToCall();
+    // }
+
+    importantMethodToCall() {
+        console.log('Important thing was done');
+    }
+}
+
+class Timer {
+    constructor(durationInput, startButton, pauseButton) {
+        this.durationInput = durationInput;
+        this.startButton = startButton;
+        this.pauseButton = pauseButton;
+
+        this.startButton.addEventListener('click', this.start);
+        this.pauseButton.addEventListener('click', this.pause);
+    }
+
+    start = () => {
+        //set the first tick manually, in order for the application to start right away
+        this.tick();
+        //setting it to this.timer allows us to share variables between methods (start to pause)
+        this.interval = setInterval(this.tick, 1000);
+    }
+
+    pause = () => {
+        clearInterval(this.interval);
+    }
+
+    tick = () => {
+        console.log('tick');
+    }
+}
+
+On Timer Flow
+    From our timer instance or from the input element?
+        -timer instance
+            -storing data inside our JS code
+                -this is more popular
+        -put it in input element so it makes the interactions with the user easier to handle
+            -storing data in our DOM!
+            -this is older
+            -we are using the DOM to learn about it
+
+
+
+
+
+
+
+class Timer {
+    constructor(durationInput, startButton, pauseButton) {
+        this.durationInput = durationInput;
+        this.startButton = startButton;
+        this.pauseButton = pauseButton;
+
+        this.startButton.addEventListener('click', this.start);
+        this.pauseButton.addEventListener('click', this.pause);
+    }
+
+    start = () => {
+        this.tick();
+        this.interval = setInterval(this.tick, 1000);
+    }
+
+    pause = () => {
+        clearInterval(this.interval);
+    }
+
+    tick = () => {
+        //setter                //getter
+        this.timeRemaing = this.timeRemaining - 1;
+    }
+    //get keyword lets us treat this like an instance variable
+        //don't have to use parens in tick method, it is invoked by the get keyword
+    get timeRemaining() {
+        return parseFloat(this.durationInput.value);
+    }
+    //when we SET a value to this
+    set timeRemaining(time) {
+        this.durationInput.value = time;
+    }
+}
+
+const durationInput = document.querySelector('#duration');
+const startButton = document.querySelector('#start');
+const pauseButton = document.querySelector('#pause');
+
+const timer = new Timer(durationInput, startButton, pauseButton);
