@@ -1,0 +1,56 @@
+Things Our Program Does
+-displays a small timer
+-shows an animated border around the timer
+    -we should be isolating the disparate parts of our program into blocks
+    
+    Event Based Architecture and Implementation
+        -We are alternating what each line of code does in our design implementation
+
+        Evented Style Approach
+            -let timer emit event/ notification throughout lifecycle so other parts of application can watch and act accordingly
+
+        Class Based Implementation
+            -class Timer
+                -constructor(durationInput, startButton, pauseButton)
+                    -start()
+                    -pause()
+                    -onDurationChange()
+                    -tick()
+
+Applicataion Storage
+    -where do we store the time remaining?
+        1)CODE STORAGE => Time remaining sits in the timer instance
+            -create the time remaining in the constructor
+            -inside tick method, decrement the time remaining instance from the durationInput
+        2)DOM STORAGE => Time remaining lives inside the input element (inverted flow)
+            -reaches into the input element, gets time remaining, and brings it to the timer instance in the code
+            -this makes UI/UX easier to handle
+                -we want user to click in and type in whatever time 
+                    -no event handlers needed, we let the code reach into DOM for information
+
+DOM Centric Approach    
+    -Storing time inside input element  
+        -source of truth, only place that has any information about what our timer is
+
+Notifying the Outside World
+    -Event Emission
+        -callbacks on events
+
+SVG Elements
+    -scalabale vector graphics
+    -use these to draw arbitrary elements on screen
+        -all are assigned height and width
+        -top left corner is origin
+            -x increases from left to right
+            -y increases from top to bottom
+
+    Advanced Circle Properties
+        -Inside the circle is the Fill
+        -Border around the circle is the Stroke
+            -always starts on right hand side and moves clockwise
+
+    Adjusting the Circle so it's in sync with selected durationInput
+        -in tick method, find onTick => as an argument pass this.timeRemaining 
+        -totalDuration needed so we know how to track it and subtract it from the total perimeter alongside the animation
+            -onStart method in timer, pass in an argument of this.timeRemaining, received as an arument we call totalDuration (in the index.js) as (total time to run)
+                

@@ -1,0 +1,90 @@
+API KEY =>  http://www.omdbapi.com/?apikey=54cdae99&
+Movie Fight Application
+    -We need to somehow fetch data about movies *inside JS code*
+    -Network => XHR => Headers to see more
+
+    Setting Timeouts For Input Stops
+        -put a setTimeout on the keypresses so we don't make too many API calls
+            -integer value with each timeout, these are timer identifiers
+                -clearTimeout will prevent the timer from being called, via its id 
+                    -basically a way to stop the callback before time expires
+        -THIS IS DEBOUNCING AN INPUT
+            -Understanding DEBOUNCING
+                -when you wait for some time to pass after last event before running a function
+                    -debounce helper function
+                        -we want to debounce the onInput function
+                            -guard access to onInput
+                                -pass a cb to the debounce function 
+                                    -debounce function will return a new function as well
+                                        -this function is a wrapper of sorts, restricting access to onInput
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//this is the 'magic.' 
+    let timeoutId;
+    if(timeoutId) {
+        clearTimeout(timeoutId);
+    }
+    //basically, each keypress will initiate clearing the timeoutID and initiate a new one, with a 2 second delay before fetchData runs, based on whatever was put into the input 
+    timeoutId = setTimeout(() => {
+        fetchData(e.target.value);
+    }, 2000)
+
+    --------------------------------------------------------
+    //DEBOUNCING => this stops the api call from fetching with each keypress
+    //here we declare a variable to be used as the timeout's ID
+     <div class="dropdown is-active">
+            <input>
+            <div class="dropdown-menu">
+                <div class="dropdown-content">
+                    <a href="" class="dropdown-item">Movie #1</a>
+                    <a href="" class="dropdown-item">Movie #2</a>
+                    <a href="" class="dropdown-item">Movie #3</a>
+                </div>
+            </div>
+        </div>
+        <div id="target"></div>
+
+        VIDEO 239 OF CLASS FOR HTML => JAVASCRIPT HELP!!!!!!!!!!!**********************
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+-Javascript Heavy Reusable Widgets
+    -HTML generation in JS code is better for this
+        -there will be elements that go directly into HTML code, typically the less interactive ones
+
+REFACTORING INSOFAR
+    *Issues With The Codebase*
+    -Everything touches everything 
+        -functions and blocks of code reach and touch others
+            -AutoComplete Widget!
+                -supposed to be Reusable
+                    -a lot of project specific HTML paired with Javascript
+                    -uses api specific data to serve information (knows what movies are)
+                -we are going to make a configuration object 
+                -Index.js will have project specific code (fetching movies, what to make them look like, code related to what to do when a user clicks on a select item)
+                -autocomplete.js will get all the reusable code, have zero knowledge of project specific information
+                    -Config object for reuse 
+                        -3 different properties
+                            1-find movies
+                            2-render individual options
+                            3-function that says what to do when options clicked
+                            4-element that designates exactly where autocomplete should be rendered to  
+                    -We will be passing in a root element that the autocomplete should be rendered into 
+                        -Having the ability to show multiple autos at the same time
+
+JSON Placeholder (JSONP)
+************************************************************************************
+<article class="notification is-primary">
+            <p class="title">${movieDetail.BoxOffice}</p>
+            <p class="subtitle">Box Office</p>
+        </article>
+************************************************************************************
+FINAL THOUGHTS
+-createAutoComplete
+    -widget that is reusable in nature
+        -we are able to swap data to customize what the autocomplete looks like
+        -most all html is put in widget itself rather than being extracted from HTML document
+            -we'd have to keep changing the root markup to coincide with the autocomplete
+                -limited root markup and let widget's code generate a lot of the HTML
+                

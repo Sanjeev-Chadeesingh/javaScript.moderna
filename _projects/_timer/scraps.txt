@@ -1,28 +1,11 @@
-//this in Constructors
+//this in Classes
     //we want this to specifically refer to the instance of the class it is within
         // 3 this possibilities
             //in an arrow function it is the instance of the this in the valid line above the arrow function
             //this is equal to the first argument of bind, call or apply, if bind call or apply were called on the function when it was invoked
             //all other cases, this is equal to whatever is to the left of the dot on a method call
 
-Things Our Program Does
--displays a small timer
--shows an animated border around the timer
-    -we should be isolating the disparate parts of our program into blocks
-    
-    Event Based Architecture and Implementation
-        -We are alternating what each line of code does in our design implementation
 
-        Evented Style Approach
-            -let timer emit event/ notification throughout lifecycle so other parts of application can watch and act accordingly
-
-        Class Based Implementation
-            -class Timer
-                -constructor(durationInput, startButton, pauseButton)
-                -start()
-                -pause()
-                -onDurationChange()
-                -tick()
 
 class Timer {
     constructor(durationInput, startButton, pauseButton) {
