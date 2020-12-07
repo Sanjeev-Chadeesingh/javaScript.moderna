@@ -1,0 +1,135 @@
+//3 add shape to our world
+    //first two numbers are location of the image, set 200right+200down from top+left
+    //second two numbers are the height and width of the object
+const shape = Bodies.rectangle(200, 200, 50, 50, {
+    //this means show the shape, and don't move it, by default gravitity is enabled, and would let it fall off the screen, if not for isStatic: true
+    isStatic: true
+});
+//adds shape to world object here, this puts it on the screen
+World.add(world, shape);
+//log the world property to see where your object is within your element and learn some properties about it
+//so far, this reads to the browser as a canvas element
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//1 importing in everything we need from Matter, after a destructuring
+const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter;
+//5 dynamically storing width and height of canvas
+const width = 800;
+const height = 600;
+//2 boilerplate!
+const engine = Engine.create();
+const { world } = engine;
+const render = Render.create({
+    //rendering a world element on the body
+    element: document.body,
+    engine: engine,
+    options: {
+        //this gives us solid shapes, with colors picked at random
+        wireframes: false,
+        width,
+        height
+    }
+});
+Render.run(render);
+Runner.run(Runner.create(), engine);
+
+World.add(world, MouseConstraint.create(engine, {
+    mouse: Mouse.create(render.canvas)
+}));
+//4 demo recreation
+//Walls
+const walls = [
+    //top, bottom, left, right
+    Bodies.rectangle(400, 0, 800, 40, { isStatic: true }),
+    Bodies.rectangle(400, 600, 800, 40, { isStatic: true }),
+    Bodies.rectangle(0, 300, 40, 600, { isStatic: true }),
+    Bodies.rectangle(800, 300, 40, 600, { isStatic: true })
+];
+//adding walls to world
+World.add(world, walls);
+
+//5 Random Shapes
+for(let i = 0; i < 50; i++) {
+    //adding image * 20 with a forLoop
+        //multiply starting positions by width and height of total canvas size
+            //5 dynamatize width and height
+    if(Math.random() > .5) {
+        World.add(world, Bodies.rectangle(Math.random() * width, Math.random() * height, 50, 50, {
+            render: {
+                fillStyle: 'blue'
+            }
+        }));
+    } else {
+        //circles added in for shape variety, one number for shape size at end, radius
+        World.add(world, Bodies.circle(Math.random() * width, Math.random() * height, 35, {
+            //this last thing is the options object, with a nested render object, to make the circles red, any CSS value would work (hex/string, etc)
+            render: {
+                fillStyle: 'red'
+            }
+        }));
+    }
+    
+};
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//1 importing in everything we need from Matter, after a destructuring
+const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter;
+//5 dynamically storing width and height of canvas
+const width = 800;
+const height = 600;
+//2 boilerplate!
+const engine = Engine.create();
+const { world } = engine;
+const render = Render.create({
+    //rendering a world element on the body
+    element: document.body,
+    engine: engine,
+    options: {
+        //this gives us solid shapes, with colors picked at random
+        wireframes: false,
+        width,
+        height
+    }
+});
+Render.run(render);
+Runner.run(Runner.create(), engine);
+
+World.add(world, MouseConstraint.create(engine, {
+    mouse: Mouse.create(render.canvas)
+}));
+//4 demo recreation
+//Walls
+const walls = [
+    //top, bottom, left, right
+    Bodies.rectangle(400, 0, 800, 40, { isStatic: true }),
+    Bodies.rectangle(400, 600, 800, 40, { isStatic: true }),
+    Bodies.rectangle(0, 300, 40, 600, { isStatic: true }),
+    Bodies.rectangle(800, 300, 40, 600, { isStatic: true })
+];
+//adding walls to world
+World.add(world, walls);
+
+//5 Random Shapes
+for(let i = 0; i < 50; i++) {
+    //adding image * 20 with a forLoop
+        //multiply starting positions by width and height of total canvas size
+            //5 dynamatize width and height
+    if(Math.random() > .5) {
+        World.add(world, Bodies.rectangle(Math.random() * width, Math.random() * height, 50, 50, {
+            render: {
+                fillStyle: 'blue'
+            }
+        }));
+    } else {
+        //circles added in for shape variety, one number for shape size at end, radius
+        World.add(world, Bodies.circle(Math.random() * width, Math.random() * height, 35, {
+            //this last thing is the options object, with a nested render object, to make the circles red, any CSS value would work (hex/string, etc)
+            render: {
+                fillStyle: 'red'
+            }
+        }));
+    }
+    
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////

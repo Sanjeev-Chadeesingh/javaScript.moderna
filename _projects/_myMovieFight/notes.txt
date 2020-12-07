@@ -1,0 +1,8 @@
+Prettify the original code
+    maybe make new pretty copies to look at
+Look at it closely
+    try to read it, maybe find the order?
+Make new
+    learn about Pokedex
+    style it up with bootstrap --EXTRA
+        -maybe have a winner event between the two?

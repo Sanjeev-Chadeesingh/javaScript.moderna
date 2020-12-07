@@ -1,0 +1,17 @@
+Building our Maze
+    pick a random starting cell
+        then take a look at cell's neighbors, four possible (grid of cells)
+            pick one of four neighbors, and remove wall between origin cell and first neighbor cell
+                look at this sibling's four cells, but sans the origin cell
+                    pick another sibling, with 3 possible moves, moving the wall between the cells with each possible pick
+            if we've moved through all possibly traversed cells and are cornered, we move to the batch of cells that haven't been traversed via backtracking, looking for cells we haven't been through
+
+GRID 
+    2 dimensional array of rows and columns
+        cells in rows are partitioned by verticals
+        cells in columns are partitioned by horizontals
+            horizontals and verticals are arrays that will contain booleans
+                true: no wall
+                false: is a wall 
+    3 array implementation (grid array, vertical array, horizontal array)
+        Grid => 2d array with all walls set to false 
