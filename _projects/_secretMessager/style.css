@@ -1,3 +1,7 @@
 .test {
     color: red;
 }
+
+.secret-input {
+    width: 950px;
+}
