@@ -3,4 +3,6 @@ ENCODING
 ASCII Character Codes - encoding with integers 0-127
 
 Base64 character codes - encoding with integers 0-63
-    
+
+--skeleton -pushed
+--inputs and encryption 
