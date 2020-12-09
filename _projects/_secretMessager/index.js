@@ -1,8 +1,14 @@
 //destructuring the hash object
 const { hash } = window.location;
 //logging the decoded encrypted string, removing the hash
-console.log(atob(hash.replace('#', '')));
-
+const message = atob(hash.replace('#', ''));
+if (message) {
+    //toggle classes to show and hide message
+    document.querySelector('#message-form').classList.add('hide');
+    document.querySelector('#message-show').classList.remove('hide');
+    //putting message inside h1 element of message-show
+    document.querySelector('h1').innerHTML = message;
+}
 document.querySelector('form').addEventListener('submit', e => {
     //prevents default backend server submission attempt
     e.preventDefault();

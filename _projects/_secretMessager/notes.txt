@@ -19,4 +19,6 @@ URL STUFF
             we'll be adding a hash after we stringify window.location, making it a usable link!!
 
 MESSAGE SHARING
-    
+    added another div with id of message in HTML (21) 
+        h1 element (hidden) is where the message is shown
+            added a return message based off of index.html being reloaded with hash taken out of URL when anchor tag clicked
