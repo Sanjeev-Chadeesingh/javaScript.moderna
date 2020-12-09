@@ -1,7 +1,8 @@
 GIT
 --skeleton -pushed
 --inputs and encryption -pushed
---url and some changes to the DOM inputs -not pushed 
+--url and some changes to the DOM inputs -pushed -need a repush
+--adding classes to cards for show and hide -not pushed
 _________________________________________________________________________________
 
 ENCODING

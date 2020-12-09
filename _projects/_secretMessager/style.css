@@ -5,3 +5,15 @@
 .secret-input {
     width: 950px;
 }
+
+.hide {
+    display: none;
+}
+
+.testOne {
+    color: blue;
+}
+
+.testTwo {
+    color: green;
+}
