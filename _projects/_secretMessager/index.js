@@ -1,6 +1,9 @@
 document.querySelector('form').addEventListener('submit', e => {
     //prevents default backend server submission attempt
     e.preventDefault();
+    //toggling hidden class for pair of forms
+    document.querySelector('#message-form').classList.add('hide');
+    document.querySelector('#link-form').classList.remove('hide');
     //select input element, log value
     const input = document.querySelector('#message-input');
     const encrypted = btoa(input.value);
