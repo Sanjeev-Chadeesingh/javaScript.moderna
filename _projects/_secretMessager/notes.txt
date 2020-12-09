@@ -12,4 +12,8 @@ ASCII Character Codes - encoding with integers 0-127
 Base64 character codes - encoding with integers 0-63
 
 URL STUFF
-    hash is typically where data we want to use will be stored
+    hash is typically where data we want to use will be stored, not really relevant to a backend server
+
+    window.location => object with props, defines current URL you're looking at 
+        window.location stringified returns just the URL inside a string 
+            we'll be adding a hash after we stringify window.location, making it a usable link!!
