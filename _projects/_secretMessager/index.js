@@ -1,3 +1,8 @@
+//destructuring the hash object
+const { hash } = window.location;
+//logging the decoded encrypted string, removing the hash
+console.log(atob(hash.replace('#', '')));
+
 document.querySelector('form').addEventListener('submit', e => {
     //prevents default backend server submission attempt
     e.preventDefault();

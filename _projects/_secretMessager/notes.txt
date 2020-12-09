@@ -17,3 +17,6 @@ URL STUFF
     window.location => object with props, defines current URL you're looking at 
         window.location stringified returns just the URL inside a string 
             we'll be adding a hash after we stringify window.location, making it a usable link!!
+
+MESSAGE SHARING
+    
