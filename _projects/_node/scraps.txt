@@ -17,4 +17,10 @@ NODE(!!!)
             __filename-full path+file of this file (from which you are NODING)
             __dirname-full path of this file (from which you are NODING) 
 
-                require function and module object are two most important parts of the node function, it's how files/code get shared around
+                require function and module object are two most important parts of the node function, it's how files/code get shared around, and what node automatically wraps every file in
+
+            Require Cache
+                require makes node look for exported requirement, this makes node update require cache, an object with props set to needed files (fileName: fileContents)
+
+                we only execute/require a file ONE SINGLE TIME
+
