@@ -58,3 +58,9 @@ Managing Node
     process.cwd Function    
         returns working directory
             much more reliable than '.'
+
+    package.json generation 
+        npm init -y
+        scaffold for node project, describes some of its qualities
+            scripts are where things are run
+            logs any and all dependencies used 
