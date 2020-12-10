@@ -16,3 +16,10 @@ setTimeout(() => {
 console.log('I happen SECOND');
 
 
+// console.log('First');
+
+// setTimeout(() => {
+// 	console.log('Third');
+// }, 3000);
+
+// console.log('Second');

@@ -39,6 +39,8 @@ const fakeRequest = (url) => {
 	});
 };
 
+
+
 // fakeRequest('/users').then((res) => {
 // 	const id = res.data[0].id;
 // 	//callback goes here for promise chaining, because we now have access to the id via the initial then()

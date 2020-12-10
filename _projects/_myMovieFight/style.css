@@ -1,0 +1,37 @@
+.header {
+    background-color: red;
+    height: 85vh;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+}
+
+.box {
+    width: 250px;
+    border: 8px solid black;
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+
+.boxOne {
+    background-color: blue;
+}
+
+.boxTwo {
+    background-color: green;
+}
+
+.boxThree {
+    background-color: purple;
+}
+
+.deleteBox {
+    background-color: rgb(168, 168, 2);
+}
+
+.hidden {
+    display: none;
+}
