@@ -24,3 +24,28 @@ NODE(!!!)
 
                 we only execute/require a file ONE SINGLE TIME
 
+            Debugging in Node
+                node-inspect fileName.js
+                    debugger commands:
+                        c-Continue execution until program ends or next debugger statement
+                        n-Run the next line of code
+                        s-Step into function
+                        o-Step out of function
+                            run repl when you step in to look
+
+                node --inspect-brk filename.js
+                    then jump to chrome://inspect
+
+///////////////////////////////////////////////////////////////////////////////////////
+// //this require statement is a relative path to the file needed to run this file
+// const message = require('./myScript');
+
+// console.log(message);
+
+// // console.log(require);
+
+code went here
+
+//total output: 0 newLine 1 newLine 1
+    //second require statement is going in order, so one gets logged twice
+///////////////////////////////////////////////////////////////////////////////////////
