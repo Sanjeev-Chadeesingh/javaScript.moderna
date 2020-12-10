@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const util = require('util');
+const chalk = require('chalk');
 
 //Method 2
 // const lstat = util.promisify(fs.lstat);
@@ -22,7 +23,13 @@ fs.readdir(process.cwd(), async (err, fileNames) => {
 
     for (let stats of allStats) {
         const index = allStats.indexOf(stats);
-        console.log(fileNames[index], stats.isFile());
+
+        if (stats.isFile()) {
+            console.log(chalk.blue(fileNames[index]));
+        } else {
+            console.log(chalk.red(fileNames[index]));
+        }
+
     }
 
 });
