@@ -1,18 +1,20 @@
 #!/usr/bin/env node
-//requiring the fileSystem module in node
-const fs = require('fs');
-//first thing to pass is directory you want to open up
-    //process.cwd() returns CurrentWorkingDirectory, globally available, no require needed
-fs.readdir(process.cwd(), (err, fileNames) => {
-    //Either
-        //err === an error object, which means something went wrong
-    //Or
-        //err === null, which means everything is ok
 
+const fs = require('fs');
+
+fs.readdir(process.cwd(), (err, fileNames) => {
     if(err) {
-        //error handling code here
-            // throw new Error(err);
-            console.log(err);
+        console.log(err);
     }
-    console.log(fileNames);
-})
+
+    // BAD CODE HERE
+    for (let fileName of fileNames) {
+        fs.lstat(fileName, (err, stats) => {
+            if (err) {
+                console.log(err);
+            }
+            console.log(fileName, stats.isFile());
+        })
+    }
+    // BAD CODE COMPLETE
+});

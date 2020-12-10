@@ -65,4 +65,5 @@ Managing Node
             scripts are where things are run
             logs any and all dependencies used 
 
-            
+    callbacks do not get run immediately (fs.lstat)
+        node looks on harddrive, looks at file and read stats, then calls callback at some future point in time. reaching into the harddrive takes some amount of time, and that time might be different each time       
