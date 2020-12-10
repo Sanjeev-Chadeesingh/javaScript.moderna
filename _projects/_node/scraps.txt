@@ -49,3 +49,12 @@ code went here
 //total output: 0 newLine 1 newLine 1
     //second require statement is going in order, so one gets logged twice
 ///////////////////////////////////////////////////////////////////////////////////////
+
+Managing Node 
+    callbacks
+        very common for module methods to end with a callback
+            last argument as a callback function that handles data and errors
+    
+    process.cwd Function    
+        returns working directory
+            much more reliable than '.'
