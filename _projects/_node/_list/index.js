@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 //requiring the fileSystem module in node
 const fs = require('fs');
 //first thing to pass is directory you want to open up
