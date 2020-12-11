@@ -66,4 +66,7 @@ Managing Node
             logs any and all dependencies used 
 
     callbacks do not get run immediately (fs.lstat)
-        node looks on harddrive, looks at file and read stats, then calls callback at some future point in time. reaching into the harddrive takes some amount of time, and that time might be different each time       
+        node looks on harddrive, looks at file and read stats, then calls callback at some future point in time. reaching into the harddrive takes some amount of time, and that time might be different each time    
+
+WHAT WE DID
+    created package.json, gave it a bin section for local command line running, package.json used to configure project, scripts and dependencies are most important sections, package.json gets automatically updated, also package.json was installed in node modules, we used a few built ins, vast majority of functions follow same mold, with last arg as a callback function     
