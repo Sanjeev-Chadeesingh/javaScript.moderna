@@ -1,3 +1,20 @@
 CHokidar
     file system monitor
-    
+
+stdio
+    TERMINAL starts up new program, or creates new process
+    -3 communication channels whenever you start a program 
+        stdin - used to receive info directly from terminal, then, program emits info over other 2 channels
+            if program is running, info is sent to stdin
+        stdout - used to communicate any normal logs
+            console.logs, output from program, taking info and communicating back to terminal 
+        stderr - used to throw error of any kind
+            all errors are written to this channel 
+
+        childProcess
+            these need a place to send their out/err and receive their in
+                child_process allows you to wire 3 channels and send them up to the parentProcess, eventually up to the terminal 
+
+        THIS IS THE PURPOSE OF stdio: 'inherit'
+
+        
