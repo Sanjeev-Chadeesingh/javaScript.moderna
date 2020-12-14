@@ -39,3 +39,11 @@ EXPRESS
                     -our on() is on the data
                         -log of data returns raw byte data 
                             -data.toString('utf8');
+        
+        Middleware!!!!!
+            -in express 
+                -functions that do some preproccessing on the req and res objects
+                -primary means of code reuse in Express
+            -in our project
+                -logicParser between request and route handler 
+            -functions in the middle of request handlers
