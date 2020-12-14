@@ -12,4 +12,14 @@ EXPRESS
                     receiving info from user? req object!
                 res - response-represents outgoing response from server back to browser
                     communicate with user or send info back to browser? res object!
-        -then tell app to start listening for incoming network traffic, on particular port on machine
+        -then tell app to start listening for incoming network reqs, on particular port on machine (as first arg)
+            -goto localhost:port# in the browser 
+                -this is an HTTP request made to the jeevesMade, running, express webserver, for access! the response is printed on the screen
+    
+    expressBreakdown
+        on localhost:3000
+            HTTP Request via my OS
+            Host: 'localhost'
+            Port: 3000
+            Path: '/'
+            Method: 'GET'
