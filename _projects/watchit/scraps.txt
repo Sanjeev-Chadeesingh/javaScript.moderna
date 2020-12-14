@@ -14,7 +14,16 @@ stdio
         childProcess
             these need a place to send their out/err and receive their in
                 child_process allows you to wire 3 channels and send them up to the parentProcess, eventually up to the terminal 
-
         THIS IS THE PURPOSE OF stdio: 'inherit'
 
-        
+    Running Code Starting Up Within Our Program
+        running programs started up within our application
+            shell-when another program is running simultaneously with yours/
+                think terminal
+                    -opening terminal is opening 2 things at the same time, shell included
+            stream-how info from stdio gets pulled from childProcess and sent to parentProcess
+            exec-Shell no Stream, command executed with Shell. 
+            execFile-no Shell, single arg at a time, no piping into other files
+            spawn-no Shell 
+            fork-no Shell, just for running node.js process, and parent can communicate with child, used mostly for web servers
+            
