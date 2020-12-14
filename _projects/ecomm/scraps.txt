@@ -1,0 +1,15 @@
+-added script dev to package.json
+    -runs nodemon on index.js, npm run (to run a script from package.json) then script name (npm run dev)
+
+EXPRESS
+    -library that allows setup for full featured web server
+    -save express object in app (const app = express());
+        -set up route handler
+            app.get(...)
+            2 args, first is '/', 
+            second is callback with 2 subArgs
+                req - request-represents request from browser into our server
+                    receiving info from user? req object!
+                res - response-represents outgoing response from server back to browser
+                    communicate with user or send info back to browser? res object!
+        -then tell app to start listening for incoming network traffic, on particular port on machine
