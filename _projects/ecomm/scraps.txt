@@ -23,3 +23,12 @@ EXPRESS
             Port: 3000
             Path: '/'
             Method: 'GET'
+
+        Express+HTML
+
+        Forms+Backend
+            give input elements names
+                -form filled and submit hit, returns props (keys are input element names) in browser after ? (called 'query string')
+                -give form method of POST
+                    -now makes post-type request 
+                        -type of req that makes a record of some kind
