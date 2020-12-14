@@ -32,3 +32,10 @@ EXPRESS
                 -give form method of POST
                     -now makes post-type request 
                         -type of req that makes a record of some kind
+            *all info is appended to body of request*
+                -need to add in code to post request handler to create a user account with info given in form 
+            Using Data from form with req object, HTML element that will submit event at some point in time
+                -on() == addEventListener()
+                    -our on() is on the data
+                        -log of data returns raw byte data 
+                            -data.toString('utf8');
