@@ -1,6 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+//this in .use() lets the middleware function work on every route handler, allowing middleware to get parsed 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.send(`
@@ -16,28 +20,8 @@ app.get('/', (req, res) => {
     //request to root (/) will send response of 'hi there!'
 });
 
-//middleware function, always 3 args (req, res, next)
-    //next is a callback given to us from express framework
-const bodyParser = (req, res, next) => {
-    if (req.method === 'POST') {
-        req.on('data', (data) => {
-            const parsed = data.toString('utf8').split('&');
-            const formData = {};
-            for (let pair of parsed) {
-                const [key, value] = pair.split('=');
-                formData[key] = value;
-            }
-            req.body = formData;
-            //letting express know we are done
-            next();
-        });
-    } else {
-        //this is signal we are done with processing
-        next();
-    }
-}
-
-app.post('/', bodyParser, (req, res) => {
+//using external library for middleware
+app.post('/', (req, res) => {
     console.log(req.body);
     res.send('Account created!');
 });

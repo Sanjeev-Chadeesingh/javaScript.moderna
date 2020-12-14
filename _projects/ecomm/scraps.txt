@@ -47,3 +47,5 @@ EXPRESS
             -in our project
                 -logicParser between request and route handler 
             -functions in the middle of request handlers
+            -can handmake middleware (like bodyParser), or use external libraries for it 
+            
