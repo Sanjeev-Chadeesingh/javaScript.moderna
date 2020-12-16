@@ -10,14 +10,19 @@ app.get('/', (req, res) => {
     //i am a route handler
     res.send(`
         <div>
-            <form>
-                <input placeholder="email" />
-                <input placeholder="password" />
-                <input placeholder="password confirmation" />
+            <form method="POST">
+                <input name="email" placeholder="email" />
+                <input name="password" placeholder="password" />
+                <input name="passwordConfirmation" placeholder="password confirmation" />
                 <button>sign up</button>
             </form>
         </div>
     `);
+});
+
+//this post is to handle the above get
+app.post('/', (req, res) => {
+    res.send('Account Created!');
 });
 
 //start listening for incoming network reqs, on a particular port
