@@ -21,7 +21,15 @@ app.get('/', (req, res) => {
 });
 
 //this post is to handle the above get
+    //this lets the user know their form submission was received
+        //request handler
 app.post('/', (req, res) => {
+    //get access to email, password and passwordConfirmation
+        //think of reqObject like an HTML element, and on like addEventListener
+            //the data log is the req body in byte form
+    req.on('data', (data) => {
+        console.log(data);
+    })
     res.send('Account Created!');
 });
 
