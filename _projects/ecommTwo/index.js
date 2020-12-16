@@ -1,6 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+//use passed with middleware allows every route handler to be auto bodyParsed for us
+    //this library will detect, no matter what style (get/post) and it will figure out what to do 
+        //app.use is used to wire up middleware within the app
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //req is browser to server
 //res is server to browser
@@ -20,34 +26,17 @@ app.get('/', (req, res) => {
     `);
 });
 
-const bodyParser = (req, res, next) => {
-    if (req.method === 'POST') {
-    //think of reqObject like an HTML element, and on like addEventListener
-            //the data log is the req body in byte form
-            req.on('data', (data) => {
-                //now logging data and changing it into a string!
-            // console.log(data.toString('utf8'));
-            const parsed = data.toString('utf8').split('&');
-            const formData = {};
-            for (let pair of parsed) {
-                const [key, value] = pair.split('=');
-                formData[key] = value;
-            }
-            req.body = formData;
-            next();
-        })
-    } else {
-        next();
-    }
-  
-}
 
 //this post is to handle the above get
     //this lets the user know their form submission was received
         //request handler
-app.post('/', bodyParser, (req, res) => {
+            //bodyParser is the outside library (instead of handmade)
+                //options object added on to urlencoded
+                    //this is specifically for HTML forms(urlencoded)
+                        //takes incoming request, receives body, parses it, and makes it available on req.body prop
+app.post('/', (req, res) => {
     //get access to email, password and passwordConfirmation
-      console.log(req);
+      console.log(req.body);
     res.send('Account Created!');
 });
 
