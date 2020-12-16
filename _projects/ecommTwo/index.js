@@ -15,3 +15,6 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening!');
 });
+//web server now running, just have to go to localhost:portNumber
+    //http request to the running express web server on local machine
+        //we make req, express server sees req and serves res, which browser prints out
