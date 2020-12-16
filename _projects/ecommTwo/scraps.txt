@@ -4,3 +4,8 @@ Express is the web server, which handles routes, based on whatever we make the m
 Autosubmission happens when you click the sign up button, browser looks at form element, and takes name keys from each form element in order to make something 
 
     Forms need name keys, allows for user inputs to be values, generating props, generating an object! this get object shows up in the browser after the ? as a query string. we can use express to modify the behavior of the request  
+
+
+Middleware is a function or functions that do some preprocessing on the req and res objects
+
+

@@ -20,24 +20,34 @@ app.get('/', (req, res) => {
     `);
 });
 
+const bodyParser = (req, res, next) => {
+    if (req.method === 'POST') {
+    //think of reqObject like an HTML element, and on like addEventListener
+            //the data log is the req body in byte form
+            req.on('data', (data) => {
+                //now logging data and changing it into a string!
+            // console.log(data.toString('utf8'));
+            const parsed = data.toString('utf8').split('&');
+            const formData = {};
+            for (let pair of parsed) {
+                const [key, value] = pair.split('=');
+                formData[key] = value;
+            }
+            req.body = formData;
+            next();
+        })
+    } else {
+        next();
+    }
+  
+}
+
 //this post is to handle the above get
     //this lets the user know their form submission was received
         //request handler
-app.post('/', (req, res) => {
+app.post('/', bodyParser, (req, res) => {
     //get access to email, password and passwordConfirmation
-        //think of reqObject like an HTML element, and on like addEventListener
-            //the data log is the req body in byte form
-    req.on('data', (data) => {
-            //now logging data and changing it into a string!
-        // console.log(data.toString('utf8'));
-        const parsed = data.toString('utf8').split('&');
-        const formData = {};
-        for (let pair of parsed) {
-            const [key, value] = pair.split('=');
-            formData[key] = value;
-        }
-        console.log(formData);
-    })
+      console.log(req);
     res.send('Account Created!');
 });
 
