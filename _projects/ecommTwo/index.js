@@ -28,7 +28,8 @@ app.post('/', (req, res) => {
         //think of reqObject like an HTML element, and on like addEventListener
             //the data log is the req body in byte form
     req.on('data', (data) => {
-        console.log(data);
+            //now logging data and changing it into a string!
+        console.log(data.toString('utf8'));
     })
     res.send('Account Created!');
 });
