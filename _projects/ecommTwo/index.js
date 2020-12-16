@@ -8,7 +8,16 @@ const app = express();
         //string goes back to whomever made the request
 app.get('/', (req, res) => {
     //i am a route handler
-    res.send('Hiyah There!');
+    res.send(`
+        <div>
+            <form>
+                <input placeholder="email" />
+                <input placeholder="password" />
+                <input placeholder="password confirmation" />
+                <button>sign up</button>
+            </form>
+        </div>
+    `);
 });
 
 //start listening for incoming network reqs, on a particular port

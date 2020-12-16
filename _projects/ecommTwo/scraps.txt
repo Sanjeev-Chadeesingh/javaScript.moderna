@@ -1,0 +1,1 @@
+Express is the web server, which handles routes, based on whatever we make the method to be (get, post, etc) it then runs a callback we've written, to serve up whatever we coded
